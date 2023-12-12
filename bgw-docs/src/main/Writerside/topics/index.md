@@ -4,8 +4,9 @@
 [AzulZuluOpenJDK]: https://www.azul.com/downloads/?version=java-11-lts&package=jdk-fx#download-openjdk
 [Mac M1]: https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#download-openjdk
 
-[BoardGameApplicationKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
-[BoardGameSceneKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
+[BoardGameApplicationKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
+[BoardGameSceneKDoc]: bgw-gui/build/dokka/html/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
+
 [MenuSceneKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-menu-scene/index.html
 [GameComponentKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/index.html
 [StaticComponentViewKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components/-static-component-view/index.html
@@ -32,7 +33,7 @@ of setting up your first game scene. We will use the popular [MauMau][MauMauRule
 
 ## Prerequisites
 
-BoardGameWork is built on top of [JavaFX 17][JavaFX 17] and therefore requires at least JDK 11.
+The BoardGameWork is built on top of [JavaFX 17][JavaFX 17] and therefore requires at least JDK 11.
 Since JavaFX was decoupled from the JavaJDK as of JDK 11, BoardGameWork comes with JavaFX dependencies including their
 native libraries for various platforms like Windows, Linux and Mac.
 
@@ -92,8 +93,7 @@ The creation of a simple board game application begins with the instantiation of
 class MauMauViewController : BoardGameApplication(windowTitle = "MauMau")
 ````
 
-This creates a window in which the game can take place. For the game itself a [BoardGameScene][BoardGameSceneKDoc] and
-a [MenuScene][MenuSceneKDoc] is declared.
+This initiates a window to serve as the frame for the game. The game's structure is defined by declaring [BoardGameScenes][BoardGameSceneKDoc] and [MenuScenes][MenuSceneKDoc].
 
 ````kotlin
 class MauMauViewController : BoardGameApplication(windowTitle = "MauMau") {
@@ -110,9 +110,7 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg"))
 class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorVisual(Color.WHITE))
 ````
 
-The menu scene gets a height of 500px and width of 300px while the game scene gets the default size of
-FullHD. The game scene gets an image as background and the menu scene solid white. To read more about
-visuals click [here][VisualsDoc].
+The menu scene is configured with a height of 500px and a width of 300px, while the game scene adopts the default FullHD size. An image is set as the background for the game scene, and a solid white color is used for the menu scene background. For further information on visuals, please follow this [link][VisualsDoc].
 
 ## BoardGameScene and MenuScene
 
