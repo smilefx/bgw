@@ -25,54 +25,32 @@
 [LayoutViewDoc]: components/layout/layout.md
 [VisualsDoc]: visual.md
 
+[DeclaringScenes]: Declaring-Scenes.md
+
 # Getting Started
 
 The creation of a simple board game application begins with the instantiation of a [BoardGameApplication][BoardGameApplicationKDoc] object. Typically, you would create a singleton that extends [BoardGameApplication][BoardGameApplicationKDoc] to serve as the main controller for your game.
 
-````kotlin
+```kotlin
 object MauMauApplication : BoardGameApplication(
     windowTitle = "MauMau"
 )
-````
+```
 
-This serves as the main frame for the game. The fundamental structure of the game is established by defining [BoardGameScenes][BoardGameSceneKDoc] and [MenuScenes][MenuSceneKDoc]. 
+The application can be started by calling the `show()` method inside the `init` block of the `MauMauApplication` object.
 
-## Scenes
-The first step involves the creation of two classes, `MauMauGameScene` and `MauMauMenuScene`, which inherit from the respective base classes.
-
-````kotlin
-class MauMauGameScene : BoardGameScene(
-    background = ImageVisual("bg.jpg")
-)
-````
-
-````kotlin
-class MauMauMenuScene : MenuScene(
-    width = 300,
-    height = 500,
-    background = ColorVisual(Color.WHITE)
-)
-````
-The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels">px</tooltip> and a `width` of 300<tooltip term="Pixels">px</tooltip>, while the `MauMauGameScene` adopts the default <tooltip term="FullHD">FullHD</tooltip> size.
-
-While the `MauMauGameScene` uses a background image, a simple solid white backdrop was chosen for the `MauMauMenuScene`.
-> For further information on visuals, please visit the [Visual][VisualsDoc] section.
-{style="note"}
-
-## First application
-With the scenes defined, the application can be started by calling the `show()` method inside the `init` block of the `MauMauApplication` object.
-
-````kotlin
+```kotlin
 object MauMauApplication : BoardGameApplication(
     windowTitle = "MauMau"
 ) {
-    val mauMauMenuScene = MauMauMenuScene()
-    val mauMauGameScene = MauMauGameScene()
-
     init {
         show()
     }
 }
-````
+```
 
-> We will not yet see anything on the screen, as we have not yet added any components to the scenes or shown them.
+> Because no scenes have been declared yet, the application will only display a black screen.
+{style="warning"}
+
+> → To learn more about scenes and how to use them, continue with the [Declaring Scenes][DeclaringScenes] section.
+{style="note"}

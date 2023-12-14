@@ -1,3 +1,5 @@
+<!-- TODO -->
+
 [MauMauRules]: https://en.wikipedia.org/wiki/Mau_Mau_(card_game)
 [BGW]: https://github.com/tudo-aqua/bgw
 [JavaFX 17]: https://openjfx.io/openjfx-docs/
@@ -27,7 +29,33 @@
 
 # Declaring Scenes
 
+Scenes are the core layout of a board game application. A [BoardGameApplication][BoardGameApplicationKDoc] can display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc] at the same time.
 
+> If a menu scene is visible, the active board game scene gets blurred out.
+
+### BoardGameScene
+
+BoardGameScenes are the main [Components][addComponentsKDoc] of the game. They are used to display the game board and all of its components. They can make use of any type of [Component][] (especially [GameComponent][GameComponentKDoc]) and [LayoutView][LayoutViewDoc].
+
+## Declaring Scenes
+The first step of setting up our game involves the creation of two classes: `MauMauGameScene` and `MauMauMenuScene`, which inherit from the respective base classes.
+
+```kotlin
+class MauMauGameScene : BoardGameScene(
+    background = ImageVisual("bg.jpg")
+)
+```
+
+```kotlin
+class MauMauMenuScene : MenuScene(
+    width = 300,
+    height = 500,
+    background = ColorVisual(Color.WHITE)
+)
+```
+The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels">px</tooltip> and a `width` of 300<tooltip term="Pixels">px</tooltip>, while the `MauMauGameScene` adopts the default <tooltip term="FullHD">FullHD</tooltip> size. While the `MauMauGameScene` uses a background image, a solid white backdrop will be displayed for the `MauMauMenuScene`.
+> For further information on visuals, please visit the [Visual][VisualsDoc] section.
+{style="note"}
 
 ## BoardGameScene and MenuScene
 
@@ -128,55 +156,3 @@ additionally contain [GameComponentViews][GameComponentKDoc] and [GameContainerV
 
 For the MauMau example two [CardStacks][CardStackKDoc] and two player hands as [LinearLayouts][LinearLayoutKDoc] are
 necessary.
-
-````kotlin
-class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
-
-    val drawStack: CardStack<CardView> = CardStack(
-        height = 200,
-        width = 130,
-        posX = 750,
-        posY = 360,
-        visual = ColorVisual(255, 255, 255, 50)
-    )
-    
-    val gameStack: CardStack<CardView> = CardStack(
-        height = 200,
-        width = 130,
-        posX = 1040,
-        posY = 360,
-        visual = ColorVisual(255, 255, 255, 50)
-    )
-
-    var currentPlayerHand: LinearLayout<CardView> = LinearLayout(
-        height = 220,
-        width = 800,
-        posX = 560,
-        posY = 750,
-        spacing = -50,
-        alignment = Alignment.CENTER,
-        visual = ColorVisual(255, 255, 255, 50)
-    )
-
-    var otherPlayerHand: LinearLayout<CardView> = LinearLayout<CardView>(
-        height = 220,
-        width = 800,
-        posX = 560,
-        posY = 50,
-        spacing = -50,
-        alignment = Alignment.CENTER,
-        visual = ColorVisual(255, 255, 255, 50)
-    ).apply {
-        rotation = 180.0
-    }
-
-    init {
-        addComponents(
-            drawStack,
-            gameStack,
-            currentPlayerHand,
-            otherPlayerHand
-        )
-    }
-}
-````
