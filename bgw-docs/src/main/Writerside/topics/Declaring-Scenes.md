@@ -23,100 +23,17 @@
 
 [UIComponentDoc]: components/uicomponents/uicomponents.md
 [LayoutViewDoc]: components/layout/layout.md
-[VisualsDoc]: concepts/visual/visual.md
+[VisualsDoc]: visual.md
 
-# Welcome to BoardGameWork
-
-[BoardGameWork (BGW)][BGW] is a framework for creating 2D board game applications.
-This guide will introduce you to the essential concepts and features of the framework, and guide you through the process
-of setting up your first game scene. We will use the popular [MauMau][MauMauRules] card game as our example project.
-
-## Prerequisites
-
-The BoardGameWork is built on top of [JavaFX 17][JavaFX 17] and therefore requires at least JDK 11.
-Since JavaFX was decoupled from the JavaJDK as of JDK 11, BoardGameWork comes with JavaFX dependencies including their
-native libraries for various platforms like Windows, Linux and Mac.
-
-We recommend installing a JDK build that already includes JavaFX to ensure your platform is supported.
-[Azul Zulu Builds of OpenJDK][AzulZuluOpenJDK] support a wide range of platforms and architectures including [Mac M1][Mac M1].
-
-## Setup
-
-Start by adding the latest version of BGW as a dependency to your project.
-
-<tabs group="gradleMaven">
-    <tab title="Gradle" group-key="gradle">
-        <code-block lang="gradle">
-        implementation("tools.aqua:bgw-gui:0.9")
-        </code-block>
-    </tab>
-    <tab title="Maven" group-key="maven">
-        <code-block lang="xml">
-            <![CDATA[
-            <dependency>
-              <groupId>tools.aqua</groupId>
-              <artifactId>bgw-gui</artifactId>
-              <version>0.9</version>
-            </dependency>
-           ]]>
-        </code-block>
-    </tab>
-</tabs>
-
-You also need to specify the correct JVM target in your build system.
-
-<tabs group="gradleMaven">
-    <tab title="Gradle" group-key="gradle">
-        <code-block lang="gradle">
-            compileKotlin {
-                kotlinOptions.jvmTarget = "11"
-            }
-        </code-block>
-    </tab>
-    <tab title="Maven" group-key="maven">
-        <code-block lang="xml">
-            <![CDATA[
-            <configuration>
-                <jvmTarget>11</jvmTarget>
-            </configuration>
-            ]]>
-        </code-block>
-    </tab>
-</tabs>
+# Declaring Scenes
 
 
-## Getting Started
-
-The creation of a simple board game application begins with the instantiation of a [BoardGameApplication][BoardGameApplicationKDoc] object. Typically, you would create a class that extends [BoardGameApplication][BoardGameApplicationKDoc] to serve as the main controller for your game.
-
-````kotlin
-class MauMauViewController : BoardGameApplication(windowTitle = "MauMau")
-````
-
-This initiates a window to serve as the frame for the game. The game's structure is defined by declaring [BoardGameScenes][BoardGameSceneKDoc] and [MenuScenes][MenuSceneKDoc].
-
-````kotlin
-class MauMauViewController : BoardGameApplication(windowTitle = "MauMau") {
-    val mauMauMenuScene: MauMauMenuScene = MauMauMenuScene()
-    val mauMauGameScene: MauMauGameScene = MauMauGameScene()
-}
-````
-
-````kotlin
-class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg"))
-````
-
-````kotlin
-class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorVisual(Color.WHITE))
-````
-
-The menu scene is configured with a height of 500px and a width of 300px, while the game scene adopts the default FullHD size. An image is set as the background for the game scene, and a solid white color is used for the menu scene background. For further information on visuals, please follow this [link][VisualsDoc].
 
 ## BoardGameScene and MenuScene
 
 The MauMau example declares a game scene and a menu scene. In menu scenes draggable
-components are not usable, only [LayoutViews][LayoutViewDoc] and 
-[UIComponents][UIComponentDoc]: In other words /components 
+components are not usable, only [LayoutViews][LayoutViewDoc] and
+[UIComponents][UIComponentDoc]: In other words /components
 that extend [StaticComponentView][StaticComponentViewKDoc].
 
 A [BoardGameApplication][BoardGameApplicationKDoc] can display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc] at the same time.
@@ -209,7 +126,7 @@ class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorV
 [BoardGameScenes][BoardGameSceneKDoc] are the main /components of the game. BoardGameScenes behave just like menu scenes but can
 additionally contain [GameComponentViews][GameComponentKDoc] and [GameContainerViews][ContainerKDoc].
 
-For the MauMau example two [CardStacks][CardStackKDoc] and two player hands as [LinearLayouts][LinearLayoutKDoc] are 
+For the MauMau example two [CardStacks][CardStackKDoc] and two player hands as [LinearLayouts][LinearLayoutKDoc] are
 necessary.
 
 ````kotlin
@@ -263,46 +180,3 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
     }
 }
 ````
-
-## Event handler
-
-When the application is started, both menu scene and game scene are shown. The game scene is blurred in the background.
-
-![](menu.png)
-
-To start a new game and close the menu scene, event handlers have to be added. As these button's
-actions change the scene, the handlers get set in the view controller.
-
-````kotlin
-class MauMauViewController : BoardGameApplication(windowTitle = "MauMau") {
-    val mauMauMenuScene: MauMauMenuScene = MauMauMenuScene()
-    val mauMauGameScene: MauMauGameScene = MauMauGameScene()
-
-    init {
-        registerMenuEvents()
-
-        showGameScene(mauMauGameScene)
-        showMenuScene(mauMauMenuScene)
-        show()
-    }
-
-    private fun registerMenuEvents() {
-        mauMauMenuScene.continueGameButton.onMouseClicked = {
-            hideMenuScene()
-        }
-
-        mauMauMenuScene.newGameButton.onMouseClicked = {
-            //Start new game here
-            hideMenuScene()
-        }
-
-        mauMauMenuScene.exitButton.onMouseClicked = {
-            exit()
-        }
-    }
-}
-````
-
-Now after pressing the *"New Game"* button the menu scene is hidden and the game scene is active.
-
-![](game.png)

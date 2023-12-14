@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
+<terms>
+    <term name="FullHD">
+        1920x1080px
+    </term>
+    <term name="Pixels">
+        Pixel is the smallest element of an image. It is a square dot of a certain color.
+    </term>
+</terms>
