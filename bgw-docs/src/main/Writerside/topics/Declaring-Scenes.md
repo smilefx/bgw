@@ -26,19 +26,116 @@
 [UIComponentDoc]: components/uicomponents/uicomponents.md
 [LayoutViewDoc]: components/layout/layout.md
 [VisualsDoc]: visual.md
+[UsingComponents]: Using-Components.md
 
 # Declaring Scenes
 
-Scenes are the core layout of a board game application. A [BoardGameApplication][BoardGameApplicationKDoc] can display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc] at the same time.
+In a board game application, scenes serve as the fundamental layout elements. A single instance of [BoardGameApplication][BoardGameApplicationKDoc] can concurrently display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc].
 
-> If a menu scene is visible, the active board game scene gets blurred out.
+> Note: If a menu scene is visible, the active board game scene gets blurred out.
 
-### BoardGameScene
+## BoardGameScene
 
-BoardGameScenes are the main [Components][addComponentsKDoc] of the game. They are used to display the game board and all of its components. They can make use of any type of [Component][] (especially [GameComponent][GameComponentKDoc]) and [LayoutView][LayoutViewDoc].
+A [BoardGameScene][BoardGameSceneKDoc] is the primary scene for your game. In most cases, a single BoardGameScene is used throughout a project. It is responsible for showcasing the game board and all associated components. It can incorporate any kind of visual element, with a particular emphasis on [GameComponentViews][GameComponentKDoc] and [Containers][ContainerKDoc].
 
-## Declaring Scenes
-The first step of setting up our game involves the creation of two classes: `MauMauGameScene` and `MauMauMenuScene`, which inherit from the respective base classes.
+<chapter title="GameComponentViews" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">CardView</td>
+        <td>Component for displaying a playing card with two visuals</td>
+    </tr>
+    <tr>
+        <td>DiceView</td>
+        <td>Component for displaying a dice with n visuals</td>
+    </tr>
+    <tr>
+        <td id="hexagon-view-def">HexagonView</td>
+        <td>Component for displaying a hexagon with one visual</td>
+    </tr>
+    <tr>
+        <td>TokenView</td>
+        <td>Component for displaying a token with one visual</td>
+    </tr>
+    </table>
+</chapter>
+
+<chapter title="Containers" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">Area</td>
+        <td>Container for displaying a simple rectangular area</td>
+    </tr>
+    <tr>
+        <td>CardStack</td>
+        <td>Container for displaying a stack of n CardViews</td>
+    </tr>
+    <tr>
+        <td>HexagonGrid</td>
+        <td>Container for displaying a hexagonal grid of <a href="#hexagon-view-def">HexagonViews</a> with <a href="https://www.redblobgames.com/grids/hexagons/#coordinates">offset or axial coordinates</a></td>
+    </tr>
+    <tr>
+        <td>LinearLayout</td>
+        <td>Container for displaying a dynamically sized linear arrangement of n GameComponentViews</td>
+    </tr>
+    <tr>
+        <td>Satchel</td>
+        <td>Container for displaying a stack of n tokens</td>
+    </tr>
+    </table>
+</chapter>
+
+## MenuScene
+
+While it's commonly sufficient to use a single BoardGameScene, the game might need multiple MenuScenes. Each MenuScene can be designed to serve a specific purpose. It can be customized with different components, however, it may only use [UIComponents][UIComponentDoc] and [LayoutViews][LayoutViewDoc] to create a unique user interface.
+
+> Note: You can switch between different MenuScenes based on user interactions.
+
+<chapter title="UIComponents" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">Button</td>
+        <td>Component for displaying a styled interactive button</td>
+    </tr>
+    <tr>
+        <td>Label</td>
+        <td>Component for displaying a styled text label</td>
+    </tr>
+    <tr>
+        <td>TextField</td>
+        <td>Component for displaying a styled text input field</td>
+    </tr>
+    <tr>
+        <td>...</td>
+        <td>
+    <note>
+        <p>
+            A full list of all available UIComponents can be found here.
+        </p>
+    </note></td>
+    </tr>
+    </table>
+</chapter>
+
+<chapter title="LayoutViews" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">CameraPane</td>
+        <td>Layout container to use zoom and pan functionality in an infinite coordinate space</td>
+    </tr>
+    <tr>
+        <td>GridPane</td>
+        <td>Layout container to define a flexible grid with a dynamic size of columns and rows</td>
+    </tr>
+    <tr>
+        <td>Pane</td>
+        <td>Layout container to define a new coordinate space for absolute positioning</td>
+    </tr>
+    </table>
+</chapter>
+
+## Scene Creation
+
+The first step of setting up scenes for our MauMau game involves the creation of two classes: `MauMauGameScene` and `MauMauMenuScene`, which inherit from the respective base classes.
 
 ```kotlin
 class MauMauGameScene : BoardGameScene(
@@ -55,25 +152,18 @@ class MauMauMenuScene : MenuScene(
 ```
 The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels">px</tooltip> and a `width` of 300<tooltip term="Pixels">px</tooltip>, while the `MauMauGameScene` adopts the default <tooltip term="FullHD">FullHD</tooltip> size. While the `MauMauGameScene` uses a background image, a solid white backdrop will be displayed for the `MauMauMenuScene`.
 > For further information on visuals, please visit the [Visual][VisualsDoc] section.
-{style="note"}
+> {style="note"}
 
-## BoardGameScene and MenuScene
+## Showing Scenes
 
-The MauMau example declares a game scene and a menu scene. In menu scenes draggable
-components are not usable, only [LayoutViews][LayoutViewDoc] and
-[UIComponents][UIComponentDoc]: In other words /components
-that extend [StaticComponentView][StaticComponentViewKDoc].
+The declared scenes can then be shown by calling [showGameScene()][showGameSceneKDoc] and [showMenuScene()][showMenuSceneKDoc] in the `init` block of the `MauMauApplication` object.
 
-A [BoardGameApplication][BoardGameApplicationKDoc] can display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc] at the same time.
-While the menu scene is visible, the game scene gets blurred out.
-
-The scenes can be shown by calling [showGameScene()][showGameSceneKDoc] and [showMenuScene()][showMenuSceneKDoc].
-The window gets shown by calling [show()][showKDoc].
-
-````kotlin
-class MauMauViewController : BoardGameApplication(windowTitle = "MauMau") {
-    val mauMauMenuScene: MauMauMenuScene = MauMauMenuScene()
-    val mauMauGameScene: MauMauGameScene = MauMauGameScene()
+```kotlin
+class MauMauViewController : BoardGameApplication(
+    windowTitle = "MauMau"
+) {
+    val mauMauMenuScene = MauMauMenuScene()
+    val mauMauGameScene = MauMauGameScene()
 
     init {
         showGameScene(mauMauGameScene)
@@ -81,78 +171,9 @@ class MauMauViewController : BoardGameApplication(windowTitle = "MauMau") {
         show()
     }
 }
-````
+```
 
-## Declaring a MenuScene
-
-As shown above, the desired size of the scene can be passed as an argument to the super constructor. As with all
-coordinates these are declared in a virtual coordinate space that will be transformed while rendering. Primary
-constraint while choosing the scene size is the ratio of height and width as this is not changed by scaling. If the
-ratio does not match the windows size, black bars will appear which can be styled using visuals as well.
-
-All /components declared in this scene will relate its position and size to the declared coordinate space.
-
-In this example a [Label][LabelKDoc] should display *"Main menu"* and three [Buttons][ButtonKDoc]
-display *"Continue"*, *"New Game"* and *"Exit"*. These /components get declared and added to the scene by
-calling [addComponents()][addComponentsKDoc] in the initializer block.
-
-````kotlin
-class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorVisual(Color.WHITE)) {
-
-    val continueGameButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 110,
-        text = "Continue",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-
-    val newGameButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 220,
-        text = "New Game",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-    
-    val exitButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 330,
-        text = "Exit",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-
-    private val menuLabel: Label = Label(
-        height = 100,
-        width = 200,
-        posX = 50,
-        posY = 0,
-        text = "Main menu",
-        font = Font(fontWeight = Font.FontWeight.BOLD)
-    )
-
-    init {
-        addComponents(
-            menuLabel,
-            continueGameButton,
-            newGameButton,
-            exitButton,
-        )
-    }
-}
-````
-
-## Declaring a BoardGameScene
-
-[BoardGameScenes][BoardGameSceneKDoc] are the main /components of the game. BoardGameScenes behave just like menu scenes but can
-additionally contain [GameComponentViews][GameComponentKDoc] and [GameContainerViews][ContainerKDoc].
-
-For the MauMau example two [CardStacks][CardStackKDoc] and two player hands as [LinearLayouts][LinearLayoutKDoc] are
-necessary.
+> Because no components have been added to the scenes yet, the application will only display empty scenes.
+> 
+> To learn more about adding components to your scene, continue with the [Using Components][UsingComponents] section.
+{style="warning"}

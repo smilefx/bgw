@@ -86,5 +86,5 @@ You also need to specify the correct JVM target in your build system.
     </tab>
 </tabs>
 
-> → To learn more about creating your first board game application using BGW, continue with the [Getting Started][GettingStarted] section.
+> To learn more about creating your first board game application using BGW, continue with the [Getting Started][GettingStarted] section.
 {style="note"}

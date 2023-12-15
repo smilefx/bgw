@@ -50,7 +50,6 @@ object MauMauApplication : BoardGameApplication(
 ```
 
 > Because no scenes have been declared yet, the application will only display a black screen.
+>
+> To learn more about scenes and how to use them, continue with the [Declaring Scenes][DeclaringScenes] section.
 {style="warning"}
-
-> → To learn more about scenes and how to use them, continue with the [Declaring Scenes][DeclaringScenes] section.
-{style="note"}

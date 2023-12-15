@@ -10,7 +10,7 @@
         </toc-element>
         <toc-element topic="Getting-Started.md"/>
         <toc-element topic="Declaring-Scenes.md"/>
-        <toc-element topic="About-Components.md"/>
+        <toc-element topic="Using-Components.md"/>
         <toc-element topic="Handle-Events.md"/>
     </toc-element>
     <toc-element topic="Components.md">
