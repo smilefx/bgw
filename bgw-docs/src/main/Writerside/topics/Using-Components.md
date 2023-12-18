@@ -14,6 +14,7 @@
 [ButtonKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-button/index.html
 [ContainerKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-game-component-container/index.html
 [CardStackKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-card-stack/index.html
+[CardViewKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.gamecomponents/-card-view/index.html
 [LinearLayoutKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-linear-layout/index.html
 
 [showGameSceneKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/show-game-scene.html
@@ -26,6 +27,8 @@
 [VisualsDoc]: visual.md
 
 [DeclaringScenes]: Declaring-Scenes.md
+[AdvancedComponents]: Advanced-Components.md
+[HandlingEvents]: Handle-Events.md
 
 # Using Components
 
@@ -35,63 +38,113 @@ Components are the building blocks of a scene. They are the visual elements that
 
 All coordinates, including those for size and position, are defined in a virtual coordinate space that undergoes transformation during rendering. The primary constraint when determining the scene size is the aspect ratio, as it remains unchanged during scaling. If the aspect ratio doesn't match the window size, black bars may appear, which can be customized using visuals.
 
-> All components added to a scene will have their position and size relative to the declared coordinate space they are added to.
+> All components added to a scene will have their position and size relative to the declared coordinate space (or layout element) they are added to.
 {style="note"}
 
 ## Declaring Components
 
-Components are declared by instantiating them with the desired parameters. The following example shows how to declare a [Label][LabelKDoc] that displays *"Main menu"* and three [Buttons][ButtonKDoc] that display *"Continue"*, *"New Game"* and *"Exit"*.
+Components are declared by instantiating them with the desired parameters. The following example shows how to declare a [Label][LabelKDoc] that displays *"Main menu"*.
 
-## Adding Components
-
-Components can be added to a scene using the `addComponents` method. The order in which components are added to a scene determines the order in which they are rendered. Components can be removed from a scene using the `removeComponents` method.
-
-
-
-In this example a [Label][LabelKDoc] should display *"Main menu"* and three [Buttons][ButtonKDoc]
-display *"Continue"*, *"New Game"* and *"Exit"*. These /components get declared and added to the scene by
-calling [addComponents()][addComponentsKDoc] in the initializer block.
-
-````kotlin
-class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorVisual(Color.WHITE)) {
-
-    val continueGameButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 110,
-        text = "Continue",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-
-    val newGameButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 220,
-        text = "New Game",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-    
-    val exitButton: Button = Button(
-        height = 80,
-        width = 200,
-        posX = 50,
-        posY = 330,
-        text = "Exit",
-        font = Font(color = Color.WHITE, fontStyle = FontStyle.ITALIC),
-        visual = ImageVisual(BUTTON_BG_FILE)
-    )
-
-    private val menuLabel: Label = Label(
+```kotlin
+    val menuLabel = Label(
         height = 100,
         width = 200,
         posX = 50,
         posY = 0,
         text = "Main menu",
         font = Font(fontWeight = Font.FontWeight.BOLD)
+    )
+```
+
+> Note: Components may inherit default values that can be overridden by passing the desired values as parameters.
+
+Furthermore, we declare three [Buttons][ButtonKDoc] that display *"Continue"*, *"New Game"* and *"Exit"* for our `MauMauMenuScene`.
+
+```kotlin
+val continueGameButton = Button(
+    height = 80,
+    width = 200,
+    posX = 50,
+    posY = 110,
+    text = "Continue",
+    font = Font(color = Color.WHITE),
+    visual = ColorVisual.GREY
+)
+
+val newGameButton = Button(
+    height = 80,
+    width = 200,
+    posX = 50,
+    posY = 220,
+    text = "New Game",
+    font = Font(color = Color.WHITE),
+    visual = ColorVisual.GREY
+)
+
+val exitButton = Button(
+    height = 80,
+    width = 200,
+    posX = 50,
+    posY = 330,
+    text = "Exit",
+    font = Font(color = Color.WHITE),
+    visual = ColorVisual.GREY
+)
+```
+
+> The structure of all buttons is almost identical. For outsourcing them into a reusable component, please visit the [Advanced Components][AdvancedComponents] section.
+{ style="note" }
+
+## Adding Components
+
+Components can be added to a scene using the `addComponents` method. The order in which components are added to a scene determines the order in which they are rendered. Components can be removed from a scene using the `removeComponents` method.
+
+In this example the components get declared as properties of the scene and added to the scene by
+calling [addComponents()][addComponentsKDoc] in the initializer block.
+
+````kotlin
+class MauMauMenuScene : MenuScene(
+    width = 300,
+    height = 500,
+    background = ColorVisual(Color.WHITE)
+) {
+    val menuLabel = Label(
+        height = 100,
+        width = 200,
+        posX = 50,
+        posY = 0,
+        text = "Main menu",
+        font = Font(fontWeight = Font.FontWeight.BOLD)
+    )
+    
+    val continueGameButton = Button(
+        height = 80,
+        width = 200,
+        posX = 50,
+        posY = 110,
+        text = "Continue",
+        font = Font(color = Color.WHITE),
+        visual = ColorVisual.GREY
+    )
+
+    val newGameButton = Button(
+        height = 80,
+        width = 200,
+        posX = 50,
+        posY = 220,
+        text = "New Game",
+        font = Font(color = Color.WHITE),
+        visual = ColorVisual.GREY
+    )
+
+    val exitButton = Button(
+        height = 80,
+        width = 200,
+        posX = 50,
+        posY = 330,
+        text = "Exit",
+        font = Font(color = Color.WHITE),
+        visual = ColorVisual.GREY
     )
 
     init {
@@ -105,9 +158,12 @@ class MauMauMenuScene : MenuScene(width = 300, height = 500, background = ColorV
 }
 ````
 
-````kotlin
-class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
+To complete the example, we add the components to our `MauMauGameScene` as well. We create two [CardStack][CardStackKDoc] for the draw stack and the game stack, as well as two [LinearLayouts][LinearLayoutKDoc] for the player's hands. All four components get the generic type `CardView` to indicate that they will contain [CardViews][CardViewKDoc].
 
+````kotlin
+class MauMauGameScene : BoardGameScene(
+    background = ImageVisual("bg.jpg")
+) {
     val drawStack: CardStack<CardView> = CardStack(
         height = 200,
         width = 130,
@@ -115,7 +171,7 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
         posY = 360,
         visual = ColorVisual(255, 255, 255, 50)
     )
-    
+
     val gameStack: CardStack<CardView> = CardStack(
         height = 200,
         width = 130,
@@ -134,7 +190,7 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
         visual = ColorVisual(255, 255, 255, 50)
     )
 
-    var otherPlayerHand: LinearLayout<CardView> = LinearLayout<CardView>(
+    var otherPlayerHand: LinearLayout<CardView> = LinearLayout(
         height = 220,
         width = 800,
         posX = 560,
@@ -155,4 +211,9 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual("bg.jpg")) {
         )
     }
 }
-```
+````
+
+> We should finally see the components rendered to the screen, although the game has no interactions yet.
+>
+> To learn more about handling user interaction, continue with the [Handling Events][HandlingEvents] section.
+{style="warning"}

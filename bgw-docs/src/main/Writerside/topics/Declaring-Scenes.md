@@ -142,6 +142,7 @@ class MauMauGameScene : BoardGameScene(
     background = ImageVisual("bg.jpg")
 )
 ```
+The `MauMauGameScene` is using a background image, which is added to the scene by passing it as a parameter to the constructor. The background visual is always rendered behind all other components.
 
 ```kotlin
 class MauMauMenuScene : MenuScene(
@@ -150,7 +151,7 @@ class MauMauMenuScene : MenuScene(
     background = ColorVisual(Color.WHITE)
 )
 ```
-The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels">px</tooltip> and a `width` of 300<tooltip term="Pixels">px</tooltip>, while the `MauMauGameScene` adopts the default <tooltip term="FullHD">FullHD</tooltip> size. While the `MauMauGameScene` uses a background image, a solid white backdrop will be displayed for the `MauMauMenuScene`.
+The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels">px</tooltip> and a `width` of 300<tooltip term="Pixels">px</tooltip>, while the `MauMauGameScene` adopts the default <tooltip term="FullHD">FullHD</tooltip> size. The `MauMauGameScene` uses its background image, while a solid white backdrop will be displayed for the `MauMauMenuScene`.
 > For further information on visuals, please visit the [Visual][VisualsDoc] section.
 > {style="note"}
 
