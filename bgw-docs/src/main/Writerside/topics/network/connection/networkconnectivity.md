@@ -1,25 +1,7 @@
----
-parent: Network
-title: Network connectivity
-nav_order: 1
----
-
 [BoardGameClientKDoc]: ../../bgw-net-client-kdoc/bgw-net-client/tools.aqua.bgw.net.client/-board-game-client/index.html
 [NetworkLoggingKDoc]: ../../bgw-net-client-kdoc/bgw-net-client/tools.aqua.bgw.net.client/-network-logging/index.html
-<!-- Start Page -->
 
 # Network communication
-
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 This section deals with the integration of network communication to establish multiplayer modes over the internet.
 

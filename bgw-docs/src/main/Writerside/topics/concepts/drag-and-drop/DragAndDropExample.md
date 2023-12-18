@@ -1,15 +1,7 @@
----
-parent: Concepts 
-title: Drag and Drop
-nav_order: 3
----
-
-<!-- KDoc -->
 [DragEventKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.event/-drag-event/
 [TokenKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-token-view/
 [AreaKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.examples.components.container/-area/
 
-<!-- GH-Pages Doc -->
 [BoardGameApplicationDoc]: ../../
 [DynamicComponentViewDoc]: ../../components/dynamiccomponent/dynamiccomponentview.md
 [TokenDoc]: ../../components/gamecomponents/gamecomponents.md#generic-token
@@ -17,18 +9,7 @@ nav_order: 3
 
 [DragDropExample]: ../../concepts/drag-and-drop/DragAndDropExample.md#complete-source-code-for-the-example
 
-<!-- Start Page -->
 # Drag and Drop
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 In this section we are going to create a fully functional step-by-step example for the drag and drop feature of the BGW
 framework.

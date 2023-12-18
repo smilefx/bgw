@@ -1,26 +1,8 @@
----
-parent: Network
-title: Json
-nav_order: 2
----
-
 [json-schema]: https://json-schema.org/understanding-json-schema/
 [tutorialspoint]: https://www.tutorialspoint.com/json/json_schema.htm
 [types]: https://json-schema.org/understanding-json-schema/reference/type.html
-<!-- Start Page -->
 
 # JSON
-
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 This section deals with the integration of json schema to validate GameActionClasses on the server side and how to 
 generate a json schema from a given KClass.

@@ -1,10 +1,3 @@
----
-parent: Concepts
-title: Observable
-nav_order: 4
----
-
-<!-- KDoc -->
 [ObservableKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.observable/-observable/index.html
 [addListenerKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.observable/-value-observable/add-listener.html
 [addListenerAndInvokeKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.observable/-value-observable/add-listener-and-invoke.html
@@ -28,18 +21,8 @@ nav_order: 4
 [ObservableLinkedListKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.observable/-observable-linked-list/index.html
 
 [IllegalArgumentExceptionKDoc]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/
-<!-- Start Page -->
-# Observable
-{: .no_toc}
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+# Observable
 
 This section showcases the different types of observables in the BGW framework. [Observables][ObservableKDoc] are used
 to enable listening on changes of element properties.

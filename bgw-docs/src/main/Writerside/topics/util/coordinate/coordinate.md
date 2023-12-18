@@ -1,28 +1,9 @@
----
-parent: Util
-title: Coordinate
-nav_order: 1
----
-
-<!-- KDoc -->
 [CoordinateDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-coordinate/index.html
 [CoordinatePlain]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-coordinate-plain/index.html
 [rotatedKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-coordinate/rotated.html
 [rotatedPlainKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-coordinate-plain/rotated.html
 
-<!-- Start Page -->
 # Coordinates
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 
 ## [Coordinate][CoordinateDoc]
 

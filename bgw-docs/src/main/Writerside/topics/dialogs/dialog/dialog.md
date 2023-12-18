@@ -1,10 +1,3 @@
----
-parent : Dialogs
-title: Dialog 
-nav_order: 1
----
-
-<!-- KDoc -->
 [BoardGameApplicationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
 [DialogKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.dialog/-dialog/index.html
 [DialogTypeKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.dialog/-dialog-type/index.html
@@ -13,21 +6,9 @@ nav_order: 1
 [showDialogKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/show-dialog.html
 [showDialogNonBlockingKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/show-dialog-non-blocking.html
 
-<!-- Links -->
 [OptionalDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html
 
-<!-- Start Page -->
 # Dialog
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 This section showcases the different types of [Dialogs][DialogKDoc]
 in the BGW framework. A Dialog can be used to

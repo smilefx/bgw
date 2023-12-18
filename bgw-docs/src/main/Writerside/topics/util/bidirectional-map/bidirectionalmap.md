@@ -1,10 +1,3 @@
----
-parent: Util
-title: BiDirectionalMap
-nav_order: 2
----
-
-<!-- KDoc -->
 [BiDirectionalMapKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-bidirectional-map/index.html
 [addKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-bidirectional-map/add.html
 [removeKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-bidirectional-map/remove.html
@@ -18,21 +11,9 @@ nav_order: 2
 [getDomainKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-bidirectional-map/get-domain.html
 [getCoDomainKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-bidirectional-map/get-co-domain.html
 
-<!-- Links -->
 [IllegalArgumentExceptionDoc]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/
 
-<!-- Start Page -->
 # BiDirectionalMap
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## Use case
 [BiDirectionalMaps][BiDirectionalMapKDoc] can be used to model relationships where every key has exactly one value and 

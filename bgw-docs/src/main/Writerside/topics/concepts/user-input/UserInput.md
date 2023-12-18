@@ -1,11 +1,3 @@
----
-parent: Concepts 
-title: User Input 
-has_toc: true 
-nav_order: 3 
----
-
-<!-- KDoc -->
 [BoardGameApplicationKDoc]: ../..//bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
 [BoardGameSceneKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
 [ComponentViewKDoc]: ../..//bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components/-component-view/index.html
@@ -15,22 +7,10 @@ nav_order: 3
 [MouseButtonTypeKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.event/-mouse-button-type/index.html
 [KeyEventKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.event/-key-event/index.html
 
-<!-- GH-Pages Doc -->
 [DnDExample]: ../drag-and-drop/DragAndDropExample.md
 [UIComponentViewDoc]: ../../components/uicomponents/uicomponents.md
 
-<!-- Start Page -->
 # User Input
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 The BGW framework uses events to communicate user input to Components. To execute code when a specific event is fired, a
 function reference, or a function literal can be set in

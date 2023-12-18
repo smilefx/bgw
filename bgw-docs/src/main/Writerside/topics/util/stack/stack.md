@@ -1,10 +1,3 @@
----
-parent: Util
-title: Stack
-nav_order: 3
----
-
-<!-- KDoc -->
 [StackKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-stack/index.html
 [peekKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-stack/peek.html
 [peekOrNullKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-stack/peek-or-null.html
@@ -24,19 +17,7 @@ nav_order: 3
 
 [NoSuchElementExceptionKDoc]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-no-such-element-exception/
 
-<!-- Start Page -->
 # Stack
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 
 ## Usage
 The [Stack][StackKDoc] utility class is a kotlin implementation of the common stack collection. 

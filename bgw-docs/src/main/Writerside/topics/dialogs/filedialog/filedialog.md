@@ -1,10 +1,3 @@
----
-parent : Dialogs 
-title: FileDialog 
-nav_order: 2
----
-
-<!-- KDoc -->
 [BoardGameApplicationKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
 [DialogKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.dialog/-dialog/index.html
 [FileDialogKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.dialog/-file-dialog/index.html
@@ -12,22 +5,10 @@ nav_order: 2
 
 [showFileDialogKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/show-file-dialog.html
 
-<!-- Links -->
 [OptionalDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html
 [FilesDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html
 
-<!-- Start Page -->
 # FileDialog
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 This section showcases the different types of file dialogs in the BGW framework. FileDialog can be
 used to display a popup to choose a file or directory either to load or save resources.

@@ -1,10 +1,3 @@
----
-parent: Concepts
-title: Visual
-nav_order: 1
----
-
-<!-- KDoc -->
 [SingleLayerVisualKDoc]: ../../concepts/visual/visual.html#singlelayervisual
 [ColorVisualKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.visual/-color-visual/
 [ImageVisualKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.visual/-image-visual/
@@ -13,23 +6,11 @@ nav_order: 1
 
 [FontKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.util/-font/
 
-<!-- Links -->
 [FileDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html
 [ColorDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html
 [BufferedImageDoc]: https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/image/BufferedImage.html
 
-<!-- Start Page -->
 # Visual
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 In this section we are going to showcase the different types of visuals in the BGW framework. Visuals are used to style
 game elements in the application. Fundamentally there are two types of Visuals:

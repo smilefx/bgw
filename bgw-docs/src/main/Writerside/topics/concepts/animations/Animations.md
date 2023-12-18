@@ -1,10 +1,3 @@
----
-parent: Concepts
-title: Animations
-nav_order: 2
----
-
-<!-- KDoc -->
 [AnimationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-animation/
 [MovementAnimationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-movement-animation/
 [RotationAnimationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-rotation-animation/
@@ -15,28 +8,15 @@ nav_order: 2
 [SequentialKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-sequential-animation/
 [ParallelKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-parallel-animation/
 
-
 [GameComponentViewKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/
 [lockKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/lock.html
 [unlockKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/unlock.html
 [runOnGUIThreadKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/-companion/run-on-g-u-i-thread.html
 
-<!-- GH-Pages Doc -->
 [VisualDoc]: ../visual/visual.md
 [DelayAnimationDoc]: ../../concepts/animations/Animations.md#delayanimation
 
-<!-- Start Page -->
 # Animations
-{: .no_toc}
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 In this section the different types of animations in the BGW framework are shown. Visuals are mostly used
 to move game elements or change their [Visual][VisualDoc].
