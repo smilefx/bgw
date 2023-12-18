@@ -28,7 +28,7 @@
 
 [DeclaringScenes]: Declaring-Scenes.md
 [AdvancedComponents]: Advanced-Components.md
-[HandlingEvents]: Handle-Events.md
+[HandlingEvents]: Handling-Events.md
 
 # Using Components
 

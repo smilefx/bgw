@@ -1,10 +1,3 @@
----
-parent: Components
-title: GameComponents
-nav_order: 3
----
-
-<!-- KDoc -->
 [GameComponentDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/index.html
 [ContainerDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-game-component-container/index.html
 [TokenDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-token-view/index.html
@@ -15,24 +8,34 @@ nav_order: 3
 [DiceAnimationDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.animation/-dice-animation/index.html
 [HexagonDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-hexagon-view/index.html
 
-<!-- GH-Pages Doc -->
 [ComponentViewDoc]: ../componentview/componentview.md
 [DynamicView]: ../../components/dynamiccomponentview/dynamiccomponentview.md
 [DnDDoc]: ../../concepts/drag-and-drop/DragAndDropExample.md
 [AnimationDoc]: ../../concepts/animations/Animations.md
 
-<!-- Start Page -->
-# GameComponentViews
-{: .no_toc}
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+# GameComponentViews
+
+<chapter title="GameComponentViews" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">CardView</td>
+        <td>Component for displaying a playing card with two visuals</td>
+    </tr>
+    <tr>
+        <td>DiceView</td>
+        <td>Component for displaying a dice with n visuals</td>
+    </tr>
+    <tr>
+        <td id="hexagon-view-def">HexagonView</td>
+        <td>Component for displaying a hexagon with one visual</td>
+    </tr>
+    <tr>
+        <td>TokenView</td>
+        <td>Component for displaying a token with one visual</td>
+    </tr>
+    </table>
+</chapter>
 
 ## Prior knowledge
 All GameComponentViews inherit from [ComponentView][ComponentViewDoc] and [DynamicView][DynamicView].

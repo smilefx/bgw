@@ -11,26 +11,16 @@
         <toc-element topic="Getting-Started.md"/>
         <toc-element topic="Declaring-Scenes.md"/>
         <toc-element topic="Using-Components.md"/>
-        <toc-element topic="Handle-Events.md"/>
+        <toc-element topic="Handling-Events.md"/>
     </toc-element>
     <toc-element topic="Components.md">
-        <toc-element toc-title="uicomponents">
-            <toc-element topic="uicomponents.md"/>
-        </toc-element>
-        <toc-element toc-title="layout">
-            <toc-element topic="layout.md"/>
-        </toc-element>
-        <toc-element toc-title="gamecomponents">
+        <toc-element topic="dynamiccomponentview.md">
             <toc-element topic="gamecomponents.md"/>
-        </toc-element>
-        <toc-element toc-title="dynamiccomponent">
-            <toc-element topic="dynamiccomponentview.md"/>
-        </toc-element>
-        <toc-element toc-title="container">
             <toc-element topic="container.md"/>
         </toc-element>
-        <toc-element toc-title="componentview">
-            <toc-element topic="componentview.md"/>
+        <toc-element topic="componentview.md">
+            <toc-element topic="uicomponents.md"/>
+            <toc-element topic="layout.md"/>
         </toc-element>
     </toc-element>
     <toc-element toc-title="components">

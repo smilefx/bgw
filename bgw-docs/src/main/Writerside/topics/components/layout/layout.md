@@ -1,10 +1,3 @@
----
-parent: Components
-title: LayoutViews
-nav_order: 6
----
-
-<!-- KDoc -->
 [LayoutViewKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.layoutviews/-layout-view/index.html
 [PaneKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.layoutviews/-pane/index.html
 [MenuSceneKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-menu-scene/index.html
@@ -42,23 +35,28 @@ nav_order: 6
 
 [CameraPaneKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.layoutviews/-camera-pane/index.html
 
-<!-- GH-Pages Doc -->
 [ComponentViewDoc]: ../componentview/componentview.md
 [ContainerDoc]: ../container/container.md
 [AreaDoc]: ../container/container.md#area
 
-<!-- Start Page -->
 # LayoutViews
-{: .no_toc}
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+<chapter title="LayoutViews" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">CameraPane</td>
+        <td>Layout container to use zoom and pan functionality in an infinite coordinate space</td>
+    </tr>
+    <tr>
+        <td>GridPane</td>
+        <td>Layout container to define a flexible grid with a dynamic size of columns and rows</td>
+    </tr>
+    <tr>
+        <td>Pane</td>
+        <td>Layout container to define a new coordinate space for absolute positioning</td>
+    </tr>
+    </table>
+</chapter>
 
 ## Prior knowledge
 All layout views inherit from [ComponentView][ComponentViewDoc].

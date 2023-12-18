@@ -1,10 +1,3 @@
----
-parent: Components 
-title: Container
-nav_order: 4
----
-
-<!-- KDoc -->
 [BGADocs]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/
 [GameComponentViewKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/
 [ContainerKDoc]: ../../bpwdgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-game-component-container/index.html
@@ -17,28 +10,39 @@ nav_order: 4
 [HexagonGridKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-hexagon-grid/index.html
 [HexagonKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-hexagon-view/index.html
 
-
-<!-- GH-Pages Doc -->
 [ComponentViewDoc]: ../componentview/componentview.md
 [DynamicView]: ../../components/dynamiccomponentview/dynamiccomponentview.md
 [UIComponentsDoc]: ../uicomponents/uicomponents.md
 [ContainerExample]: ../../components/container/container.md#complete-source-code-for-the-example
 
-<!-- Links -->
 [IterableDoc]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/
 
-<!-- Start Page -->
 # Container
-{: .no_toc}
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+<chapter title="Containers" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">Area</td>
+        <td>Container for displaying a simple rectangular area</td>
+    </tr>
+    <tr>
+        <td>CardStack</td>
+        <td>Container for displaying a stack of n CardViews</td>
+    </tr>
+    <tr>
+        <td>HexagonGrid</td>
+        <td>Container for displaying a hexagonal grid of <a href="#hexagon-view-def">HexagonViews</a> with <a href="https://www.redblobgames.com/grids/hexagons/#coordinates">offset or axial coordinates</a></td>
+    </tr>
+    <tr>
+        <td>LinearLayout</td>
+        <td>Container for displaying a dynamically sized linear arrangement of n GameComponentViews</td>
+    </tr>
+    <tr>
+        <td>Satchel</td>
+        <td>Container for displaying a stack of n tokens</td>
+    </tr>
+    </table>
+</chapter>
 
 ## Prior knowledge
 All containers inherit from [ComponentView][ComponentViewDoc] and [DynamicView][DynamicView]. 
@@ -270,3 +274,4 @@ class AreaExample : BoardGameApplication("Area example") {
   }
 }
 ````
+

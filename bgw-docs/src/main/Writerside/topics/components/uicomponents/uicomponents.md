@@ -1,9 +1,3 @@
----
-parent: Components 
-title: UIComponents
----
-
-<!-- KDoc -->
 [LabelKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-label/index.html
 [ButtonKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-button/index.html
 [CheckBoxKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-check-box/index.html
@@ -25,22 +19,84 @@ title: UIComponents
 
 [BoardGameApplicationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
 
-<!-- GH-Pages Doc -->
 [ComponentViewDoc]: ../../componentview/componentview.md
 [UserInputDoc]: ../../concepts/user-input/UserInput.md
 
-<!-- Start Page -->
 # UIComponents
-{: .no_toc}
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+<chapter title="UIComponents" collapsible="true" default-state="expanded">
+    <table style="header-column">
+    <tr>
+        <td width="20%">Button</td>
+        <td>Component for displaying a styled interactive button</td>
+    </tr>
+    <tr>
+        <td>Label</td>
+        <td>Component for displaying a styled text label</td>
+    </tr>
+    <tr>
+        <td>CheckBox</td>
+        <td>Component for displaying a styled checkbox</td>
+    </tr>
+    <tr>
+        <td>BinaryStateButton</td>
+        <td>Component for displaying a styled toggle button</td>
+    </tr>
+    <tr>
+        <td>TextField</td>
+        <td>Component for displaying a styled text input field</td>
+    </tr>
+    <tr>
+        <td>PasswordField</td>
+        <td>Component for displaying a styled password input field</td>
+    </tr>
+    <tr>
+        <td>TextArea</td>
+        <td>Component for displaying a styled text input area</td>
+    </tr>
+    <tr>
+        <td>ComboBox</td>
+        <td>Component for displaying a styled dropdown selector</td>
+    </tr>
+    <tr>
+        <td>TableView</td>
+        <td>Component for displaying a styled table of components</td>
+    </tr>
+    <tr>
+        <td>ListView</td>
+        <td>Component for displaying a styled list of components</td>
+    </tr>
+    <tr>
+        <td>ProgressBar</td>
+        <td>Component for displaying a styled progress bar</td>
+    </tr>
+    <tr>
+        <td>ColorPicker</td>
+        <td>Component for displaying a styled color picker</td>
+    </tr>
+    </table>
+</chapter>
+
+<!-- TODO: Add code/result snippets for each component -->
+
+### Label
+<tabs>
+    <tab title="Code">
+        <code-block lang="kotlin">
+          private val outputLabel = Label(
+              posX = 50,
+              posY = 50,
+              width = 300,
+              text = "I am a Label.",
+              alignment = Alignment.CENTER,
+              isWrapText = true
+          )
+        </code-block>
+    </tab>
+    <tab title="Result">
+        <img src="card_deck.png">
+    </tab>
+</tabs>
 
 ## Prior knowledge
 All ui /components inherit from [ComponentView][ComponentViewDoc].

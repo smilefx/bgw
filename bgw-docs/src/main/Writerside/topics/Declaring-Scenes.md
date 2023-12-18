@@ -7,14 +7,13 @@
 [Mac M1]: https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx#download-openjdk
 
 [BoardGameApplicationKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
-[BoardGameSceneKDoc]: bgw-gui/build/dokka/html/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
-
-[MenuSceneKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-menu-scene/index.html
-[GameComponentKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/index.html
+[BoardGameSceneKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
+[MenuSceneKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-menu-scene/index.html
+[GameComponentKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.gamecomponentviews/-game-component-view/index.html
 [StaticComponentViewKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components/-static-component-view/index.html
 [LabelKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-label/index.html
 [ButtonKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-button/index.html
-[ContainerKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-game-component-container/index.html
+[ContainerKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-game-component-container/index.html
 [CardStackKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-card-stack/index.html
 [LinearLayoutKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.container/-linear-layout/index.html
 
@@ -23,6 +22,7 @@
 [showKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/show.html
 [addComponentsKDoc]: bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-scene/add-components.html
 
+[GameComonentDoc]: components/gamecomponents/gamecomponents.md
 [UIComponentDoc]: components/uicomponents/uicomponents.md
 [LayoutViewDoc]: components/layout/layout.md
 [VisualsDoc]: visual.md
@@ -160,7 +160,7 @@ The `MauMauMenuScene` is configured with a `height` of 500<tooltip term="Pixels"
 The declared scenes can then be shown by calling [showGameScene()][showGameSceneKDoc] and [showMenuScene()][showMenuSceneKDoc] in the `init` block of the `MauMauApplication` object.
 
 ```kotlin
-class MauMauViewController : BoardGameApplication(
+object MauMauApplication : BoardGameApplication(
     windowTitle = "MauMau"
 ) {
     val mauMauMenuScene = MauMauMenuScene()

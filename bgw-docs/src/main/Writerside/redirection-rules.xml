@@ -6,4 +6,8 @@
         <accepts>page.html</accepts>
     </rule>
     -->
+    <rule id="7feab34d">
+        <description>Created after removal of "Component Types" from BoardGameWork</description>
+        <accepts>Component-Types.html</accepts>
+    </rule>
 </rules>
