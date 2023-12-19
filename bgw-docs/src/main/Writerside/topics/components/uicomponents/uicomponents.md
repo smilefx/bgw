@@ -18,11 +18,13 @@
 [TextInputUIComponentKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-text-input-u-i-component/index.html
 
 [BoardGameApplicationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
+[BoardGameSceneKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
 
 [ComponentViewDoc]: ../../componentview/componentview.md
 [UserInputDoc]: ../../concepts/user-input/UserInput.md
 
 # UIComponents
+UIComponents are components that are used to display information to the user or retrieve input from the user. They can be used in any scene and are **not limited** to [BoardGameScenes][BoardGameSceneKDoc].
 
 <chapter title="UIComponents" collapsible="true" default-state="expanded">
     <table style="header-column">
@@ -79,7 +81,32 @@
 
 <!-- TODO: Add code/result snippets for each component -->
 
-### Label
+## Prior knowledge
+All UI components are derived from the [ComponentView][ComponentViewDoc] superclass. Make sure to read the documentation for [ComponentViews][] first, as the features of this superclass are not reiterated here.
+
+## Introduction
+[UIComponent][UIComponentKDoc] serves as a medium to display information to the user or to gather user input. There are three fundamental classes of UIComponentViews:
+
+- [UIComponent][UIComponentKDoc]: This is the base class for all UIComponents.
+- [LabeledUIComponents][LabeledUIComponentKDoc]: This class extends UIComponent and offers additional fields to specify a text, for instance, a Button with a text.
+- [TextInputUIComponents][TextInputUIComponentKDoc]: This class extends UIComponent and provides a text input field for user-defined text.
+
+> Note: UIComponents are a type of ComponentView. This implies that all methods for handling user input, as discussed in the [User Input Guide][UserInputDoc], are also applicable to UIComponentViews.
+
+The following is a visual representation of all available UIComponents within the framework. Portions of the source code will be utilized in this tutorial to highlight the key features of each UIComponent. The complete source code can be accessed here:
+
+[View it on GitHub]()
+
+![image](visualguide.png)
+
+## Label
+
+<tldr>
+    <p><format style="bold">Component for displaying a styled text label</format></p>
+    <p><a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a> &nbsp; | &nbsp; <a href="http://">ComponentView</a></p>
+</tldr>
+A [Label][LabelKDoc] is a basic text element. In this instance, a new label is created with the text "I am a Label", centered alignment, and enabled text wrapping. The text wrapping feature allows the text to flow onto the next line if the label's width is insufficient to accommodate the entire text.
+
 <tabs>
     <tab title="Code">
         <code-block lang="kotlin">
@@ -98,59 +125,30 @@
     </tab>
 </tabs>
 
-## Prior knowledge
-All ui /components inherit from [ComponentView][ComponentViewDoc].
-It is therefore helpful to read this documentation first as the features from this superclass doesn't get repeated here.
-
-## Introduction
-A [UIComponent][UIComponentKDoc] may be used to present information to the user or retrieve input. There are three base classes
-for UIComponents.
-
-- [UIComponent][UIComponentKDoc]: the baseclass for all UIComponents
-- [LabeledUIComponents][LabeledUIComponentKDoc]: extends UIComponent and provides additional fields to define a text e.g., a Button
-  with a text.
-- [TextInputUIComponents][TextInputUIComponentKDoc]: extends UIComponent and provides a text input field for user defined text.
-
-**NOTE:** UIComponents are ComponentViews. This means all methods of handling user input discussed in the
-[User Input Guide][UserInputDoc] are also available to UIComponentViews.
-
-This is a visual example of all the available UIComponents in the framework. Parts of the source code will be used in
-this tutorial to demonstrate the most important features of each UIComponent. The full source code can be found here:
-
-[View it on GitHub](uicomponents.html#complete-source-code-for-the-example){:
-.btn }
-
-![image](visualguide.png)
-
-## Label
-A [Label][LabelKDoc] is just a simple text. In this example a new label is instantiated with the text "I am a Label.",
-aligned to the center and with text wrapping enabled. Enabled text wrapping allows the text to wrap onto a new line if
-the width of the label is too small for the text.
-
-````kotlin
-private val outputLabel = Label(
-	posX = 50,
-	posY = 50,
-	width = 300,
-	text = "I am a Label.",
-	alignment = Alignment.CENTER,
-	isWrapText = true
-)
-````
-
 ## Button
 A [Button][ButtonKDoc] is a component that plays an animation when a mouse click is performed over the button.
 Additionally, a text may be defined to describe the button. In this example a new button is instantiated, and the ``
 onMouseClicked`` is set, so that the ``outputLabel`` displays "Someone pressed the Button!".
 
-````kotlin
-val button = Button(posX = 450, posY = 50, text = "I am a Button.", visual = ColorVisual.LIGHT_GRAY)
-
-button.onMouseClicked = {
-	outputLabel.text = "Someone pressed the Button!"
-}
-
-````
+<tabs>
+    <tab title="Code">
+        <code-block lang="kotlin">
+            val button = Button(
+                posX = 450,
+                posY = 50,
+                text = "I am a Button.",
+                visual = ColorVisual.LIGHT_GRAY
+            )
+            <br>
+            button.onMouseClicked = {
+              outputLabel.text = "Someone pressed the Button!"
+            }
+        </code-block>
+    </tab>
+    <tab title="Result">
+        <img src="card_deck.png">
+    </tab>
+</tabs>
 
 ## CheckBox
 A [CheckBox][CheckBoxKDoc] is a component that can be checked or unchecked. It can be enabled to allow an indeterminate
