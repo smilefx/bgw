@@ -40,6 +40,10 @@
 [AreaDoc]: ../container/container.md#area
 
 # LayoutViews
+<tldr>
+    <p><format style="bold">Components especially for laying out user interface elements</format></p>
+    <p>→ &nbsp; <a href="http://">StaticComponentView</a></p>
+</tldr>
 
 <chapter title="LayoutViews" collapsible="true" default-state="expanded">
     <table style="header-column">

@@ -24,6 +24,10 @@
 [UserInputDoc]: ../../concepts/user-input/UserInput.md
 
 # UIComponents
+<tldr>
+    <p><format style="bold">Components for displaying user interface elements</format></p>
+    <p>→ &nbsp; <a href="http://">StaticComponentView</a></p>
+</tldr>
 UIComponents are components that are used to display information to the user or retrieve input from the user. They can be used in any scene and are **not limited** to [BoardGameScenes][BoardGameSceneKDoc].
 
 <chapter title="UIComponents" collapsible="true" default-state="expanded">
@@ -103,7 +107,7 @@ The following is a visual representation of all available UIComponents within th
 
 <tldr>
     <p><format style="bold">Component for displaying a styled text label</format></p>
-    <p><a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a> &nbsp; | &nbsp; <a href="http://">ComponentView</a></p>
+    <p>→ &nbsp; <a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a></p>
 </tldr>
 A [Label][LabelKDoc] is a basic text element. In this instance, a new label is created with the text "I am a Label", centered alignment, and enabled text wrapping. The text wrapping feature allows the text to flow onto the next line if the label's width is insufficient to accommodate the entire text.
 

@@ -3,6 +3,10 @@
 [DragEventKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.event/-drag-event/index.html
 
 # Dynamic Components
+<tldr>
+    <p><format style="bold">Dynamic components for use only in BoardGameScenes</format></p>
+    <p>→ &nbsp; <a href="http://">ComponentView</a></p>
+</tldr>
 
 ## Introduction
 [DynamicComponentView][DynamicComponentViewKDoc] is the baseclass for all [ComponentViews][ComponentViewKDoc] that are draggable.

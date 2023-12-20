@@ -15,6 +15,10 @@
 
 
 # GameComponentViews
+<tldr>
+    <p><format style="bold">Components for displaying game elements</format></p>
+    <p>→ &nbsp; <a href="http://">DynamicComponentView</a></p>
+</tldr>
 
 <chapter title="GameComponentViews" collapsible="true" default-state="expanded">
     <table style="header-column">

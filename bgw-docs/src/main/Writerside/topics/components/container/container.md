@@ -18,6 +18,10 @@
 [IterableDoc]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/
 
 # Container
+<tldr>
+    <p><format style="bold">Component especially for laying out game elements</format></p>
+    <p>→ &nbsp; <a href="http://">StaticComponentView</a></p>
+</tldr>
 
 <chapter title="Containers" collapsible="true" default-state="expanded">
     <table style="header-column">
