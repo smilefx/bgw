@@ -21,7 +21,6 @@ import javafx.scene.layout.Pane
 import javafx.scene.layout.Region
 import tools.aqua.bgw.builder.NodeBuilder.buildChildren
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
 import tools.aqua.bgw.components.container.GameComponentContainer
 import tools.aqua.bgw.core.Scene
 
@@ -30,7 +29,7 @@ object ContainerNodeBuilder {
   /** Switches between Containers. */
   internal fun buildContainer(
       scene: Scene<out ComponentView>,
-      container: GameComponentContainer<out DynamicComponentView>
+      container: GameComponentContainer<out ComponentView>
   ): Region =
       Pane().apply {
         container.observableComponents.setGUIListenerAndInvoke(emptyList()) { oldValue, _ ->

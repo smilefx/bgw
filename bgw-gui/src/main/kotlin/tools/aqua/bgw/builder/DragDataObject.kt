@@ -18,14 +18,14 @@
 package tools.aqua.bgw.builder
 
 import javafx.scene.layout.StackPane
-import tools.aqua.bgw.components.DynamicComponentView
+import tools.aqua.bgw.components.ComponentView
 import tools.aqua.bgw.util.Coordinate
 
 /**
  * [DragDataObject] data class.
  *
- * @property draggedComponent Currently dragged [DynamicComponentView].
- * @property draggedStackPane StackPane of currently dragged [DynamicComponentView].
+ * @property draggedComponent Currently dragged [ComponentView].
+ * @property draggedStackPane StackPane of currently dragged [ComponentView].
  * @property mouseStartCoord Mouse coordinate relative to [draggedComponent] at drag start.
  * @property posStartCoord Coordinate of [draggedComponent] at drag start.
  * @property relativeRotation Rotation of [draggedComponent] relative to scene.
@@ -35,7 +35,7 @@ import tools.aqua.bgw.util.Coordinate
  * @property rollback Rollback function to roll back changes made during drag.
  */
 internal data class DragDataObject(
-    val draggedComponent: DynamicComponentView,
+    val draggedComponent: ComponentView,
     val draggedStackPane: StackPane,
     val mouseStartCoord: Coordinate,
     val posStartCoord: Coordinate,

@@ -24,7 +24,6 @@ import javafx.scene.layout.StackPane
 import tools.aqua.bgw.animation.Animation
 import tools.aqua.bgw.builder.DragDataObject
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
 import tools.aqua.bgw.components.RootComponent
 import tools.aqua.bgw.event.KeyEvent
 import tools.aqua.bgw.observable.lists.ObservableArrayList
@@ -54,16 +53,16 @@ sealed class Scene<T : ComponentView>(width: Number, height: Number, background:
   internal val dragTargetsBelowMouse: MutableSet<ComponentView> = mutableSetOf()
 
   /**
-   * [Property] for the currently dragged [DynamicComponentView] or `null` if no
-   * [DynamicComponentView] is currently dragged.
+   * [Property] for the currently dragged [ComponentView] or `null` if no
+   * [ComponentView] is currently dragged.
    */
   internal val draggedComponentProperty: Property<DragDataObject?> = Property(null)
 
   /**
    * Currently dragged [ComponentView] encapsulated in a [DragDataObject] or `null` if no
-   * [DynamicComponentView] is currently dragged.
+   * [ComponentView] is currently dragged.
    */
-  val draggedComponent: DynamicComponentView?
+  val draggedComponent: ComponentView?
     get() = draggedComponentProperty.value?.draggedComponent
 
   /**

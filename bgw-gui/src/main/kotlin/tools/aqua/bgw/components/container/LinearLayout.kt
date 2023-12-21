@@ -19,6 +19,7 @@
 
 package tools.aqua.bgw.components.container
 
+import tools.aqua.bgw.components.ComponentView
 import tools.aqua.bgw.components.gamecomponentviews.GameComponentView
 import tools.aqua.bgw.components.uicomponents.Orientation
 import tools.aqua.bgw.core.*
@@ -55,7 +56,7 @@ import tools.aqua.bgw.visual.Visual
  * @param alignment specifies how the contained [GameComponentView]s should be aligned. Default:
  * [Alignment.TOP_LEFT].
  */
-open class LinearLayout<T : GameComponentView>(
+open class LinearLayout<T : ComponentView>(
     posX: Number = 0,
     posY: Number = 0,
     width: Number = DEFAULT_LINEAR_LAYOUT_WIDTH,

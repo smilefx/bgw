@@ -22,7 +22,6 @@ import javafx.scene.input.MouseEvent
 import javafx.scene.layout.StackPane
 import kotlin.math.min
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
 import tools.aqua.bgw.components.container.GameComponentContainer
 import tools.aqua.bgw.components.gamecomponentviews.GameComponentView
 import tools.aqua.bgw.components.layoutviews.GridPane
@@ -32,10 +31,10 @@ import tools.aqua.bgw.core.Scene
 import tools.aqua.bgw.event.DragEvent
 import tools.aqua.bgw.util.Coordinate
 
-/** DragDropBuilder. Applies drag drop functions to [DynamicComponentView]s. */
+/** DragDropBuilder. Applies drag drop functions to [ComponentView]s. */
 object DragDropBuilder {
-  /** Registers drag drop events to [DynamicComponentView]. */
-  internal fun DynamicComponentView.registerDragEvents(
+  /** Registers drag drop events to [ComponentView]. */
+  internal fun ComponentView.registerDragEvents(
       stackPane: StackPane,
       scene: Scene<out ComponentView>
   ) {
@@ -55,8 +54,8 @@ object DragDropBuilder {
     }
   }
 
-  /** Adds onDragDetected to [DynamicComponentView]. */
-  private fun DynamicComponentView.onDragDetected(scene: BoardGameScene, e: MouseEvent) {
+  /** Adds onDragDetected to [ComponentView]. */
+  private fun ComponentView.onDragDetected(scene: BoardGameScene, e: MouseEvent) {
     // Find path to component
     val pathToComponent = scene.findPathToChild(this)
 
@@ -117,7 +116,7 @@ object DragDropBuilder {
 
   // region Find rollback
   /** Calculates rollback for drag & drop. */
-  private fun DynamicComponentView.findRollback(scene: BoardGameScene): () -> Unit =
+  private fun ComponentView.findRollback(scene: BoardGameScene): () -> Unit =
       when (val parent = parent) {
         is GridPane<*> -> parent.findRollback(this)
         is GameComponentContainer<*> -> parent.findRollback(this as GameComponentView)

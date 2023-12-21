@@ -20,7 +20,6 @@
 package tools.aqua.bgw.components.gamecomponentviews
 
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
 import tools.aqua.bgw.visual.Visual
 
 /**
@@ -43,7 +42,7 @@ sealed class GameComponentView(
     height: Number,
     visual: Visual
 ) :
-    DynamicComponentView(
+    ComponentView(
         posX = posX, posY = posY, width = width, height = height, visual = visual) {
   /** @throws UnsupportedOperationException [GameComponentView] does not support children. */
   override fun removeChild(component: ComponentView) {

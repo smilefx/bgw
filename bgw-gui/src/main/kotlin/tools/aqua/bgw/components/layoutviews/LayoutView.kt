@@ -20,7 +20,6 @@
 package tools.aqua.bgw.components.layoutviews
 
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.StaticComponentView
 import tools.aqua.bgw.visual.Visual
 
 /**
@@ -40,5 +39,5 @@ sealed class LayoutView<T : ComponentView>(
     height: Number,
     visual: Visual
 ) :
-    StaticComponentView<T>(
+    ComponentView(
         posX = posX, posY = posY, width = width, height = height, visual = visual)

@@ -68,7 +68,7 @@ import tools.aqua.bgw.visual.Visual
  * @param height height for this [Satchel]. Default: [DEFAULT_SATCHEL_HEIGHT].
  * @param visual visual for this [Satchel]. Default: [Visual.EMPTY].
  */
-open class Satchel<T : GameComponentView>(
+open class Satchel<T : ComponentView>(
     posX: Number = 0,
     posY: Number = 0,
     width: Number = DEFAULT_SATCHEL_WIDTH,

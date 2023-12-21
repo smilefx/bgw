@@ -19,7 +19,7 @@
 
 package tools.aqua.bgw.core
 
-import tools.aqua.bgw.components.StaticComponentView
+import tools.aqua.bgw.components.ComponentView
 import tools.aqua.bgw.visual.ColorVisual
 import tools.aqua.bgw.visual.Visual
 
@@ -35,7 +35,7 @@ open class MenuScene(
     height: Number = DEFAULT_SCENE_HEIGHT,
     background: Visual = ColorVisual.WHITE
 ) :
-    Scene<StaticComponentView<out StaticComponentView<*>>>(
+    Scene<ComponentView>(
         width = width, height = height, background = background) {
 
   init {

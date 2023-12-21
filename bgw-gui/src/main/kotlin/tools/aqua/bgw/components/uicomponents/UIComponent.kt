@@ -20,7 +20,6 @@
 package tools.aqua.bgw.components.uicomponents
 
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.StaticComponentView
 import tools.aqua.bgw.components.gamecomponentviews.GameComponentView
 import tools.aqua.bgw.observable.properties.Property
 import tools.aqua.bgw.observable.properties.StringProperty
@@ -45,7 +44,7 @@ sealed class UIComponent(
     font: Font,
     visual: Visual
 ) :
-    StaticComponentView<UIComponent>(
+    ComponentView(
         posX = posX, posY = posY, width = width, height = height, visual = visual) {
 
   /**

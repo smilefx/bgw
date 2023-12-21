@@ -26,8 +26,6 @@ import tools.aqua.bgw.builder.FXConverters.toKeyEvent
 import tools.aqua.bgw.builder.FXConverters.toMouseEvent
 import tools.aqua.bgw.builder.FXConverters.toScrollEvent
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
-import tools.aqua.bgw.components.StaticComponentView
 import tools.aqua.bgw.components.container.GameComponentContainer
 import tools.aqua.bgw.components.gamecomponentviews.GameComponentView
 import tools.aqua.bgw.components.gamecomponentviews.HexagonView
@@ -49,7 +47,7 @@ object NodeBuilder {
   internal fun build(scene: Scene<out ComponentView>, componentView: ComponentView): Region {
     val node: Region =
         when (componentView) {
-          is GameComponentContainer<out DynamicComponentView> ->
+          is GameComponentContainer<out ComponentView> ->
               ContainerNodeBuilder.buildContainer(scene, componentView)
           is GameComponentView -> ComponentNodeBuilder.buildGameComponent(componentView)
           is LayoutView<out ComponentView> ->
@@ -57,10 +55,6 @@ object NodeBuilder {
           is CameraPane<out LayoutView<*>> ->
               CameraPaneBuilder.buildCameraPane(scene, componentView)
           is UIComponent -> UINodeBuilder.buildUIComponent(componentView)
-          is StaticComponentView<*> ->
-              throw IllegalInheritanceException(componentView, StaticComponentView::class.java)
-          is DynamicComponentView ->
-              throw IllegalInheritanceException(componentView, DynamicComponentView::class.java)
           else -> throw IllegalInheritanceException(componentView, ComponentView::class.java)
         }
     val background = if (componentView is HexagonView) null else VisualBuilder.build(componentView)
@@ -88,9 +82,7 @@ object NodeBuilder {
       node: Region,
       scene: Scene<out ComponentView>
   ) {
-    if (this is DynamicComponentView) {
-      registerDragEvents(stackPane, scene)
-    }
+    registerDragEvents(stackPane, scene)
 
     stackPane.setOnMouseDragEntered {
       val dragTarget = scene.draggedComponent ?: return@setOnMouseDragEntered

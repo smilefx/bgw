@@ -605,6 +605,67 @@ internal constructor(posX: Number, posY: Number, width: Number, height: Number, 
   var onDragDropped: ((DragEvent) -> Unit)? = null
 
   /**
+   * [Property] that controls whether component is draggable or not.
+   *
+   * @see isDraggable
+   */
+  val isDraggableProperty: BooleanProperty = BooleanProperty(false)
+
+  /**
+   * Controls whether component is draggable or not.
+   *
+   * @see isDraggableProperty
+   */
+  var isDraggable: Boolean
+    get() = isDraggableProperty.value
+    set(value) {
+      isDraggableProperty.value = value
+    }
+
+  /**
+   * [Property] that reflects whether component is currently dragged or not.
+   *
+   * @see isDragged
+   */
+  val isDraggedProperty: ReadonlyBooleanProperty = ReadonlyBooleanProperty(false)
+
+  /**
+   * Reflects whether component is currently dragged or not.
+   *
+   * @see isDraggedProperty
+   */
+  var isDragged: Boolean
+    get() = isDraggedProperty.value
+    internal set(value) {
+      isDraggedProperty.value = value
+    }
+
+  /**
+   * Gets invoked with a [DragEvent] whenever a drag gesture is started on this [ComponentView].
+   *
+   * @see DragEvent
+   */
+  var onDragGestureStarted: ((DragEvent) -> Unit)? = null
+
+  /**
+   * Gets invoked with a [DragEvent] whenever a mouse movement occurs during a drag gesture on this
+   * [ComponentView].
+   *
+   * @see DragEvent
+   */
+  var onDragGestureMoved: ((DragEvent) -> Unit)? = null
+
+  /**
+   * Gets invoked with a [DragEvent] whenever a drag gesture has ended on this rendered
+   * [ComponentView].
+   *
+   * Second parameter is `true` if at least one drop target accepted drop, `false` otherwise.
+   *
+   * @see DragEvent
+   */
+  var onDragGestureEnded: ((DropEvent, Boolean) -> Unit)? = null
+
+  /**
    * Repositions this [ComponentView] to the specified coordinates.
    *
    * @param posX New X coordinate.

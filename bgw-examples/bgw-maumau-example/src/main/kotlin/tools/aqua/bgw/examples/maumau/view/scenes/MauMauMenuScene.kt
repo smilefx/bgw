@@ -17,12 +17,16 @@
 
 package tools.aqua.bgw.examples.maumau.view.scenes
 
+import tools.aqua.bgw.components.ComponentView
+import tools.aqua.bgw.components.container.LinearLayout
 import java.awt.Color
 import tools.aqua.bgw.components.layoutviews.GridPane
 import tools.aqua.bgw.components.uicomponents.Button
 import tools.aqua.bgw.components.uicomponents.Label
 import tools.aqua.bgw.components.uicomponents.LabeledUIComponent
+import tools.aqua.bgw.components.uicomponents.Orientation
 import tools.aqua.bgw.core.Alignment
+import tools.aqua.bgw.core.BoardGameScene
 import tools.aqua.bgw.core.MenuScene
 import tools.aqua.bgw.examples.maumau.main.MENU_ITEM_HEIGHT
 import tools.aqua.bgw.examples.maumau.main.MENU_ITEM_WIDTH
@@ -57,9 +61,28 @@ class MauMauMenuScene :
   /** Exit game [Button]. */
   val exitButton: Button = MenuButton("Exit")
 
+    val buttonLayout = LinearLayout<ComponentView>(
+        spacing = 15,
+        posX = (300 - MENU_ITEM_WIDTH) / 2,
+        posY = 0,
+        alignment = Alignment.CENTER,
+        orientation = Orientation.VERTICAL,
+        width = MENU_ITEM_WIDTH,
+        height = 6 * MENU_ITEM_HEIGHT + 5 * 15
+    ).apply {
+        addAll(
+            menuLabel,
+            continueGameButton,
+            newLocalGameButton,
+            hostGameButton,
+            joinGameButton,
+            exitButton
+        )
+    }
+
   init {
     addComponents(
-        GridPane<LabeledUIComponent>(columns = 1, rows = 6, spacing = 15, layoutFromCenter = false)
+        /*GridPane<LabeledUIComponent>(columns = 1, rows = 6, spacing = 15, layoutFromCenter = false)
             .apply {
               this[0, 0] = menuLabel
               this[0, 1] = continueGameButton
@@ -70,6 +93,8 @@ class MauMauMenuScene :
 
               setColumnWidth(0, 300)
               setCenterMode(Alignment.CENTER)
-            })
+            })*/
+        buttonLayout
+    )
   }
 }

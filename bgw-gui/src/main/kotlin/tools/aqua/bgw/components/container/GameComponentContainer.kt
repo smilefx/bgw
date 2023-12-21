@@ -20,7 +20,6 @@
 package tools.aqua.bgw.components.container
 
 import tools.aqua.bgw.components.ComponentView
-import tools.aqua.bgw.components.DynamicComponentView
 import tools.aqua.bgw.components.LayeredContainer
 import tools.aqua.bgw.components.gamecomponentviews.GameComponentView
 import tools.aqua.bgw.observable.ValueObserver
@@ -41,14 +40,14 @@ import tools.aqua.bgw.visual.Visual
  * @param height height for this [GameComponentContainer].
  * @param visual visual for this [GameComponentContainer].
  */
-sealed class GameComponentContainer<T : DynamicComponentView>(
+sealed class GameComponentContainer<T : ComponentView>(
     posX: Number,
     posY: Number,
     width: Number,
     height: Number,
     visual: Visual
 ) :
-    DynamicComponentView(posX = posX, posY = posY, width = width, height = height, visual = visual),
+    ComponentView(posX = posX, posY = posY, width = width, height = height, visual = visual),
     Iterable<T>,
     LayeredContainer<T> {
   /**
