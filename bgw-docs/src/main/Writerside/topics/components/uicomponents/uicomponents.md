@@ -1,33 +1,52 @@
 [LabelKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-label/index.html
+
 [ButtonKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-button/index.html
+
 [CheckBoxKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-check-box/index.html
+
 [ColorPickerKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-color-picker/index.html
+
 [ComboBoxKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-combo-box/index.html
+
 [ProgressBarKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-progress-bar/index.html
+
 [ToggleButtonKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-toggle-button/index.html
+
 [RadioButtonKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-radio-button/index.html
+
 [ToggleGroupKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-toggle-group/index.html
+
 [TextAreaKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-text-area/index.html
+
 [TextFieldKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-text-field/index.html
+
 [ListViewKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-list-view/index.html
+
 [TableViewKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-table-view/index.html
+
 [TableColumnKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-table-column/index.html
 
 [UIComponentKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-u-i-component/index.html
+
 [LabeledUIComponentKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-labeled-u-i-component/index.html
+
 [TextInputUIComponentKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.components.uicomponents/-text-input-u-i-component/index.html
 
 [BoardGameApplicationKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-application/index.html
-[BoardGameSceneKDoc]: ../../bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
+
+[BoardGameSceneKDoc]: https://tudo-aqua.github.io/bgw/bgw-gui-kdoc/bgw-gui/tools.aqua.bgw.core/-board-game-scene/index.html
 
 [ComponentViewDoc]: ../../componentview/componentview.md
+
 [UserInputDoc]: ../../concepts/user-input/UserInput.md
 
 # UIComponents
+
 <tldr>
     <p><format style="bold">Components for displaying user interface elements</format></p>
     <p>→ &nbsp; <a href="http://">StaticComponentView</a></p>
 </tldr>
+
 UIComponents are components that are used to display information to the user or retrieve input from the user. They can be used in any scene and are **not limited** to [BoardGameScenes][BoardGameSceneKDoc].
 
 <chapter title="UIComponents" collapsible="true" default-state="expanded">
@@ -86,32 +105,46 @@ UIComponents are components that are used to display information to the user or 
 <!-- TODO: Add code/result snippets for each component -->
 
 ## Prior knowledge
-All UI components are derived from the [ComponentView][ComponentViewDoc] superclass. Make sure to read the documentation for [ComponentViews][] first, as the features of this superclass are not reiterated here.
+
+All UI components are derived from the [ComponentView][ComponentViewDoc] superclass. Make sure to read the documentation
+for [ComponentViews][] first, as the features of this superclass are not reiterated here.
 
 ## Introduction
-[UIComponent][UIComponentKDoc] serves as a medium to display information to the user or to gather user input. There are three fundamental classes of UIComponentViews:
+
+[UIComponent][UIComponentKDoc] serves as a medium to display information to the user or to gather user input. There are
+three fundamental classes of UIComponentViews:
 
 - [UIComponent][UIComponentKDoc]: This is the base class for all UIComponents.
-- [LabeledUIComponents][LabeledUIComponentKDoc]: This class extends UIComponent and offers additional fields to specify a text, for instance, a Button with a text.
-- [TextInputUIComponents][TextInputUIComponentKDoc]: This class extends UIComponent and provides a text input field for user-defined text.
+- [LabeledUIComponents][LabeledUIComponentKDoc]: This class extends UIComponent and offers additional fields to specify
+  a text, for instance, a Button with a text.
+- [TextInputUIComponents][TextInputUIComponentKDoc]: This class extends UIComponent and provides a text input field for
+  user-defined text.
 
-> Note: UIComponents are a type of ComponentView. This implies that all methods for handling user input, as discussed in the [User Input Guide][UserInputDoc], are also applicable to UIComponentViews.
+> Note: UIComponents are a type of ComponentView. This implies that all methods for handling user input, as discussed in
+> the [User Input Guide][UserInputDoc], are also applicable to UIComponentViews.
 
-The following is a visual representation of all available UIComponents within the framework. Portions of the source code will be utilized in this tutorial to highlight the key features of each UIComponent. The complete source code can be accessed here:
+The following is a visual representation of all available UIComponents within the framework. Portions of the source code
+will be utilized in this tutorial to highlight the key features of each UIComponent. The complete source code can be
+accessed here:
 
-[View it on GitHub]()
+[View it on GitHub](https://)
 
 ![image](visualguide.png)
 
 ## Label
 
+<!-- Show additional properties -->
 <tldr>
     <p><format style="bold">Component for displaying a styled text label</format></p>
     <p>→ &nbsp; <a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a></p>
 </tldr>
+
 A [Label][LabelKDoc] is a basic text element. In this instance, a new label is created with the text "I am a Label", centered alignment, and enabled text wrapping. The text wrapping feature allows the text to flow onto the next line if the label's width is insufficient to accommodate the entire text.
 
 <tabs>
+    <tab title="Component">
+        <img src="card_deck.png" />
+    </tab>
     <tab title="Code">
         <code-block lang="kotlin">
           private val outputLabel = Label(
@@ -124,17 +157,23 @@ A [Label][LabelKDoc] is a basic text element. In this instance, a new label is c
           )
         </code-block>
     </tab>
-    <tab title="Result">
-        <img src="card_deck.png">
-    </tab>
 </tabs>
 
 ## Button
-A [Button][ButtonKDoc] is a component that plays an animation when a mouse click is performed over the button.
-Additionally, a text may be defined to describe the button. In this example a new button is instantiated, and the ``
-onMouseClicked`` is set, so that the ``outputLabel`` displays "Someone pressed the Button!".
+
+<!-- Show additional properties -->
+
+<tldr>
+    <p><format style="bold">Component for displaying a styled interactive button</format></p>
+    <p>→ &nbsp; <a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a></p>
+</tldr>
+
+A [Button][ButtonKDoc] is a component that has an animation upon mouse click. It can also be labeled with descriptive text. In this example, we create a new button and apply an `onMouseClicked` event. When the button is clicked, the text "Someone pressed the Button!" is printed to the console.
 
 <tabs>
+    <tab title="Component">
+        <img src="card_deck.png" />
+    </tab>
     <tab title="Code">
         <code-block lang="kotlin">
             val button = Button(
@@ -143,61 +182,82 @@ onMouseClicked`` is set, so that the ``outputLabel`` displays "Someone pressed t
                 text = "I am a Button.",
                 visual = ColorVisual.LIGHT_GRAY
             )
-            <br>
+            &#13;
             button.onMouseClicked = {
-              outputLabel.text = "Someone pressed the Button!"
+                println("Someone pressed the Button!")
             }
         </code-block>
-    </tab>
-    <tab title="Result">
-        <img src="card_deck.png">
     </tab>
 </tabs>
 
 ## CheckBox
-A [CheckBox][CheckBoxKDoc] is a component that can be checked or unchecked. It can be enabled to allow an indeterminate
-state. This can be used to express uncertainty. Whenever a CheckBox is clicked it changes its state in the following
-order:
 
-if indeterminate is not allowed
+<tldr>
+    <p><format style="bold">Component for displaying a styled checkbox</format></p>
+    <p>→ &nbsp; <a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a></p>
+</tldr>
 
-| ``checked``  | ``isIndeterminate`` |
-| ------------ | ------------------- |
-| ``false``    | ``false``           |
-| ``true``     | ``false``           |
+A [CheckBox][CheckBoxKDoc] is a versatile component that can either be checked or unchecked. It also supports an indeterminate state, which can be utilized to represent ambiguity. The state of a CheckBox transitions as follows:
+<tabs>
+    <tab title="Indeterminate: Disallowed">
+        <table>
+            <tr><td width="50%">isChecked</td><td width="50%">isIndeterminate</td></tr>
+            <tr><td><code>false</code></td><td><code>false</code></td></tr>
+            <tr><td><code>true</code></td><td><code>false</code></td></tr>
+        </table>
+        <tip>
+            <p>Note: It is possible to manually set <code>isIndeterminate</code> to <code>true</code>, however this state cannot be achieved through clicking, iff <code>allowIndeterminate = false</code>.</p>
+        </tip>
+    </tab>
+    <tab title="Indeterminate: Allowed">
+        <table>
+            <tr><td width="50%">isChecked</td><td width="50%">isIndeterminate</td></tr>
+            <tr><td><code>false</code></td><td><code>false</code></td></tr>
+            <tr><td><code>false</code></td><td><code>true</code></td></tr>
+            <tr><td><code>true</code></td><td><code>false</code></td></tr>
+        </table>
+    </tab>
+</tabs>
 
-if indeterminate is allowed
+In the given example, listeners are attached to the ``isCheckedProperty`` and ``isIndeterminateProperty``. These
+listeners print the current state of the CheckBox to the console.
 
-| ``checked``  | ``isIndeterminate`` |
-| ------------ | ------------------- |
-| ``false``    | ``false``           |
-| ``false``    | ``true``            |
-| ``true``     | ``false``           |
-
-**NOTE:** it is possible to set ``isIndeterminate`` to ``true`` even when indeterminate is not allowed. It is just
-impossible to reach the indeterminate state via clicks on the CheckBox.
-
-In this example, listeners are added to the ``checkedProperty`` and ``indeterminateProperty``, such that
-``outputLabel`` displays the state of the CheckBox, whenever the state changes.
-
-````kotlin
-val checkBox =
-	CheckBox(posX = 50, posY = 150, width = 300, text = "I am a CheckBox.", alignment = Alignment.CENTER_LEFT)
-
-checkBox.allowIndeterminate = true
-
-checkBox.checkedProperty.addListener { _, newValue ->
-	outputLabel.text = if (newValue) "The check box is checked!" else "The check box is unchecked!"
-}
-
-checkBox.indeterminateProperty.addListener { _, newValue ->
-	if (newValue) outputLabel.text = "The check box is indeterminate!"
-}
-````
+<tabs>
+    <tab title="Component">
+        <img src="card_deck.png" />
+    </tab>
+    <tab title="Code">
+        <code-block lang="kotlin">
+        val checkBox = CheckBox(
+            posX = 50,
+            posY = 150,
+            width = 300,
+            text = "I am a CheckBox.",
+            alignment = Alignment.CENTER_LEFT,
+            allowIndeterminate = true
+        )
+        &#13;
+        // Add a listener to fire when the CheckBox gets checked or unchecked
+        checkBox.isCheckedProperty.addListener { _, newValue ->
+            if (newValue)
+                println("The check box is checked!")
+            else
+                println("The check box is unchecked!")
+        }
+        &#13;
+        // Add a listener to fire when the CheckBox gets ambiguous
+        checkBox.isIndeterminateProperty.addListener { _, newValue ->
+            if (newValue)
+                println("The check box is indeterminate!")
+        }
+        </code-block>
+    </tab>
+</tabs>
 
 ## ColorPicker
+
 A [ColorPicker][ColorPickerKDoc] may be used to enable a user to specify a colour intuitively. The selected
-colour can be set and retrieved via the ``selectedColor`` property. To react to a new ``selectedColor``, a listener 
+colour can be set and retrieved via the ``selectedColor`` property. To react to a new ``selectedColor``, a listener
 may be added
 to the ``selectedColorProperty``. In this example the text colour of another label is changed, whenever a new colour is
 picked.
@@ -206,24 +266,25 @@ picked.
 val colorPicker = ColorPicker(posX = 450, posY = 200, width = 300, initialColor = Color.BLACK)
 
 val colorPickerLabel = Label(
-	posX = colorPicker.posX,
-	posY = colorPicker.posY - 50,
-	width = colorPicker.width,
-	height = 50,
-	alignment = Alignment.CENTER,
-	font = Font(color = colorPicker.selectedColor),
-	text = "This is a ColorPicker. Use it to change the colour of this text!"
+    posX = colorPicker.posX,
+    posY = colorPicker.posY - 50,
+    width = colorPicker.width,
+    height = 50,
+    alignment = Alignment.CENTER,
+    font = Font(color = colorPicker.selectedColor),
+    text = "This is a ColorPicker. Use it to change the colour of this text!"
 ).apply { isWrapText = true }
 
 colorPicker.selectedColorProperty.addListener { _, newValue ->
-	colorPickerLabel.font = Font(color = newValue)
+    colorPickerLabel.font = Font(color = newValue)
 }
 ````
 
 ## ComboBox
+
 A [ComboBox][ComboBoxKDoc] is a drop-down menu, where a user may choose an option. A ``prompt`` may be specified to
 inform the user, what is expected of him. The ComboBox has a type parameter to define a type for the objects that
-correspond to the options. One string per contained object is necessary to represent it as an option to the user. 
+correspond to the options. One string per contained object is necessary to represent it as an option to the user.
 There are two methods of obtaining said string.
 
 A ``formatFunction``, that projects the contained objects to a string representation may be set. If
@@ -236,10 +297,10 @@ suffix "Option ".
 
 ````kotlin
 val comboBox =
-	ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
+    ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
 
 comboBox.formatFunction = {
-	"Option ${it.toInt()}"
+    "Option ${it.toInt()}"
 }
 ````
 
@@ -255,15 +316,16 @@ newly selected option whenever it changes.
 
 ````kotlin
 comboBox.selectedItemProperty.addListener { _, newValue ->
-	outputLabel.text = "Combo box selection is : $newValue"
+    outputLabel.text = "Combo box selection is : $newValue"
 }
 ````
 
 ## ProgressBar
+
 A [ProgressBar][ProgressBarKDoc] is a coloured bar that can indicate progress to the user. The current progress and
 colour can be retrieved and set via ``progress`` and ``barColor`` respectively.
 
-In this example a new ProgressBar is instantiated and the ``onMouseClicked`` is set, such that the progress of the 
+In this example a new ProgressBar is instantiated and the ``onMouseClicked`` is set, such that the progress of the
 bar is
 advanced by 5% on a click or reset if the progress is greater than 100%.
 
@@ -274,7 +336,7 @@ equal or greater than 1 means 100% progress.
 val progressBar = ProgressBar(posX = 450, posY = 350, width = 300, progress = 0.5, barColor = Color.GREEN)
 
 progressBar.onMouseClicked = {
-	progressBar.progress = if (progressBar.progress > 1.0) 0.0 else progressBar.progress + 0.05
+    progressBar.progress = if (progressBar.progress > 1.0) 0.0 else progressBar.progress + 0.05
 }
 ````
 
@@ -283,22 +345,23 @@ the ``barColor`` based on the current progress level.
 
 ````kotlin
 progressBar.progressProperty.addListener { _, newValue ->
-	when {
-		newValue > 0.8 -> progressBar.barColor = Color.RED
-		newValue > 0.5 -> progressBar.barColor = Color.YELLOW
-		else -> progressBar.barColor = Color.GREEN
-	}
+    when {
+        newValue > 0.8 -> progressBar.barColor = Color.RED
+        newValue > 0.5 -> progressBar.barColor = Color.YELLOW
+        else -> progressBar.barColor = Color.GREEN
+    }
 }
 ````
 
 ## ToggleButton and RadioButton
+
 A [ToggleButton][ToggleButtonKDoc] can either be selected or not selected. A [RadioButton][RadioButtonKDoc] is just a
 ToggleButton with a different visual representation. It has exactly the same functionalities as a ToggleButton.
 
 To retrieve whether the ToggleButton is toggled on or off the ``isSelected`` field can be used.
 
 ToggleButtons have a feature where different ToggleButtons may be linked via a [ToggleGroup][ToggleGroupKDoc].
-ToggleGroups enforce a rule, where only one ToggleButton in a ToggleGroup may be selected at a time. So whenever a 
+ToggleGroups enforce a rule, where only one ToggleButton in a ToggleGroup may be selected at a time. So whenever a
 ToggleButton in
 a ToggleGroup changes its selected state to ``true``, all other ToggleButtons in the ToggleGroup automatically have
 their selected state set to ``false``.
@@ -323,18 +386,19 @@ of the Label ``radioLabel`` gets updated, whenever the selected state of ``radio
 
 ````kotlin
 radioButton.selectedProperty.addListener { _, newValue ->
-	radioLabel.text = if (newValue) "This is a selected radio button!" else "This is a deselected radio button!"
+    radioLabel.text = if (newValue) "This is a selected radio button!" else "This is a deselected radio button!"
 }
 ````
 
 ## TextArea, TextField and PasswordField
-[TextArea][TextAreaKDoc], [TextField][TextFieldKDoc] and [PasswordField][PasswordFieldKDoc] can be used to allow users 
+
+[TextArea][TextAreaKDoc], [TextField][TextFieldKDoc] and [PasswordField][PasswordFieldKDoc] can be used to allow users
 to type texts. The main difference between TextArea and TextField/PasswordField, is that [TextArea][TextAreanKDoc] has
 multiple lines of input, while [TextField][TextFieldKDoc] and [PasswordField][PasswordFieldKDoc] only have one. The
 text can be set and retrieved via ``text``. A prompt can be specified that informs the user, which textual input is
 requested. To react to user input, a listener on the ``textProperty`` can be added. Additionally, the
 ``onKeyPressed``, ``onKeyReleased`` and ``onKeyTyped`` handlers are a great way of executing code when textual input
-occurs. [PasswordField][PasswordFieldKDoc] acts like a [TextField][TextFieldKDoc] but uses stars to display the typed 
+occurs. [PasswordField][PasswordFieldKDoc] acts like a [TextField][TextFieldKDoc] but uses stars to display the typed
 text.
 
 In this example a TextArea, and a TextField with ``prompt``s are instantiated and listeners on their ``textProperty``s
@@ -343,16 +407,17 @@ are added, that update the ``outputLabel`` with the current ``text``.
 ````kotlin
 val textArea = TextArea(posX = 50, posY = 600, prompt = "Type something! This is the prompt.")
 textArea.textProperty.addListener { _, newValue ->
-	outputLabel.text = newValue
+    outputLabel.text = newValue
 }
 
 val textField = TextField(posX = 450, posY = 600, width = 300, prompt = "Type something! This is the prompt.")
 textField.textProperty.addListener { _, newValue ->
-	outputLabel.text = newValue
+    outputLabel.text = newValue
 }
 ````
 
 ## ListView
+
 A [ListView][ListViewKDoc] can be used to display a list of strings. The ListView has a type parameter, so any type of
 objects can be contained in the ListView. By default, the ``toString()`` function is applied to the contained objects to
 obtain a string representation of each object. A ``formatFunction`` can be set that gets used instead of
@@ -369,11 +434,12 @@ of the contained object.
 
 ````kotlin
 listView.formatFunction = {
-	"Value for this cell is $it"
+    "Value for this cell is $it"
 }
 ````
 
 ## TableView
+
 A [TableView][TableViewKDoc] can be used to display multiple representations of the same objects in pre-defined columns.
 The TableView has a type parameter, so any type of objects can be contained in the TableView.
 
@@ -389,8 +455,10 @@ column.
 
 The three columns are as follows:
 
-- ``"Value"`` displays the actual value of the contained int, so the ``fromatFunction`` just wraps the value in a string.
-- ``"Squared"`` display the squared value of the contained int, so the ``formatFunction`` calculates the square of the value
+- ``"Value"`` displays the actual value of the contained int, so the ``fromatFunction`` just wraps the value in a
+  string.
+- ``"Squared"`` display the squared value of the contained int, so the ``formatFunction`` calculates the square of the
+  value
   and wraps it in a string.
 - ``"Even?"`` displays whether the value of the contained int is even, so the ``formatFucntion`` checks if the value is
   divisible by two and wraps the resulting boolean in a string.
@@ -411,7 +479,8 @@ table.items.addAll(listView.items)
 
 ## Loading custom fonts
 
-The [UIComponent][UIComponentKDoc] class has a parameter font, which can be passed. This means all derived component classes like e.g. [Label][LabelKDoc] can be constructed with a custom font.
+The [UIComponent][UIComponentKDoc] class has a parameter font, which can be passed. This means all derived component
+classes like e.g. [Label][LabelKDoc] can be constructed with a custom font.
 
 In order to load a custom font use the [BoardGameApplication][BoardGameApplicationKDoc] class.
 
@@ -421,12 +490,13 @@ val resource = UIComponentExample::class.java.getResource("/Roboto-Regular.ttf")
 val fontFile = File(resource.toURI())
 BoardGameApplication.loadFont(fontFile)
 ````
+
 Now the font is registered and ready to use.
 
 ````kotlin
 private val label = Label(
-  text = "I am a Label.",
-  font = Font(family = "Roboto")
+    text = "I am a Label.",
+    font = Font(family = "Roboto")
 )
 ````
 
@@ -437,235 +507,235 @@ private val label = Label(
 
 ````kotlin
 fun main() {
-	UIComponentExample()
+    UIComponentExample()
 }
 
 class UIComponentExample : BoardGameApplication("UIComponent Example") {
-	private val menuScene = MenuScene(width = 800).apply {
-		this.opacity = 1.0
-	}
+    private val menuScene = MenuScene(width = 800).apply {
+        this.opacity = 1.0
+    }
 
-	private val outputLabel = Label(
-		posX = 50,
-		posY = 50,
-		width = 300,
-		text = "I am a Label.",
-		alignment = Alignment.CENTER,
-		isWrapText = true
-	)
+    private val outputLabel = Label(
+        posX = 50,
+        posY = 50,
+        width = 300,
+        text = "I am a Label.",
+        alignment = Alignment.CENTER,
+        isWrapText = true
+    )
 
-	init {
-		menuScene.addComponents(outputLabel)
+    init {
+        menuScene.addComponents(outputLabel)
 
-		//Button
-		val button = Button(posX = 450, posY = 50, text = "I am a Button.", visual = ColorVisual.LIGHT_GRAY)
+        //Button
+        val button = Button(posX = 450, posY = 50, text = "I am a Button.", visual = ColorVisual.LIGHT_GRAY)
 
-		button.onMouseClicked = {
-			outputLabel.text = "Someone pressed the Button!"
-		}
+        button.onMouseClicked = {
+            outputLabel.text = "Someone pressed the Button!"
+        }
 
-		menuScene.addComponents(button)
+        menuScene.addComponents(button)
 
-		//CheckBox
-		val checkBox =
-			CheckBox(posX = 50, posY = 150, width = 300, text = "I am a CheckBox.", alignment = Alignment.CENTER_LEFT)
+        //CheckBox
+        val checkBox =
+            CheckBox(posX = 50, posY = 150, width = 300, text = "I am a CheckBox.", alignment = Alignment.CENTER_LEFT)
 
-		checkBox.allowIndeterminate = true
+        checkBox.allowIndeterminate = true
 
-		checkBox.checkedProperty.addListener { _, newValue ->
-			outputLabel.text = if (newValue) "The check box is checked!" else "The check box is unchecked!"
-		}
+        checkBox.checkedProperty.addListener { _, newValue ->
+            outputLabel.text = if (newValue) "The check box is checked!" else "The check box is unchecked!"
+        }
 
-		checkBox.indeterminateProperty.addListener { _, newValue ->
-			if (newValue) outputLabel.text = "The check box is indeterminate!"
-		}
+        checkBox.indeterminateProperty.addListener { _, newValue ->
+            if (newValue) outputLabel.text = "The check box is indeterminate!"
+        }
 
-		menuScene.addComponents(checkBox)
+        menuScene.addComponents(checkBox)
 
-		//ColorPicker
-		val colorPicker = ColorPicker(posX = 450, posY = 200, width = 300, initialColor = Color.BLACK)
+        //ColorPicker
+        val colorPicker = ColorPicker(posX = 450, posY = 200, width = 300, initialColor = Color.BLACK)
 
-		val colorPickerLabel = Label(
-			posX = colorPicker.posX,
-			posY = colorPicker.posY - 50,
-			width = colorPicker.width,
-			height = 50,
-			alignment = Alignment.CENTER,
-			font = Font(color = colorPicker.selectedColor),
-			text = "This is a ColorPicker. Use it to change the colour of this text!"
-		).apply { isWrapText = true }
+        val colorPickerLabel = Label(
+            posX = colorPicker.posX,
+            posY = colorPicker.posY - 50,
+            width = colorPicker.width,
+            height = 50,
+            alignment = Alignment.CENTER,
+            font = Font(color = colorPicker.selectedColor),
+            text = "This is a ColorPicker. Use it to change the colour of this text!"
+        ).apply { isWrapText = true }
 
-		colorPicker.selectedColorProperty.addListener { _, newValue ->
-			colorPickerLabel.font = Font(color = newValue)
-		}
+        colorPicker.selectedColorProperty.addListener { _, newValue ->
+            colorPickerLabel.font = Font(color = newValue)
+        }
 
-		menuScene.addComponents(colorPicker, colorPickerLabel)
+        menuScene.addComponents(colorPicker, colorPickerLabel)
 
-		//ComboBox
-		val comboBox =
-			ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
+        //ComboBox
+        val comboBox =
+            ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
 
-		comboBox.formatFunction = {
-			"Option ${it.toInt()}"
-		}
+        comboBox.formatFunction = {
+            "Option ${it.toInt()}"
+        }
 
-		comboBox.items = mutableListOf(0.0, 1.0, 2.0)
+        comboBox.items = mutableListOf(0.0, 1.0, 2.0)
 
-		comboBox.selectedItemProperty.addListener { _, newValue ->
-			outputLabel.text = "Combo box selection is : $newValue"
-		}
+        comboBox.selectedItemProperty.addListener { _, newValue ->
+            outputLabel.text = "Combo box selection is : $newValue"
+        }
 
-		val comboBoxLabel = Label(
-			posX = comboBox.posX,
-			posY = comboBox.posY - 50,
-			width = comboBox.width,
-			height = comboBox.height,
-			alignment = Alignment.CENTER,
-			text = "This is a ComboBox"
-		)
+        val comboBoxLabel = Label(
+            posX = comboBox.posX,
+            posY = comboBox.posY - 50,
+            width = comboBox.width,
+            height = comboBox.height,
+            alignment = Alignment.CENTER,
+            text = "This is a ComboBox"
+        )
 
-		menuScene.addComponents(comboBox, comboBoxLabel)
+        menuScene.addComponents(comboBox, comboBoxLabel)
 
-		//ProgressBar
-		val progressBar = ProgressBar(posX = 450, posY = 350, width = 300, progress = 0.5, barColor = Color.GREEN)
+        //ProgressBar
+        val progressBar = ProgressBar(posX = 450, posY = 350, width = 300, progress = 0.5, barColor = Color.GREEN)
 
-		progressBar.onMouseClicked = {
-			progressBar.progress = if (progressBar.progress > 1.0) 0.0 else progressBar.progress + 0.05
-		}
+        progressBar.onMouseClicked = {
+            progressBar.progress = if (progressBar.progress > 1.0) 0.0 else progressBar.progress + 0.05
+        }
 
-		progressBar.progressProperty.addListener { _, newValue ->
-			when {
-				newValue > 0.8 -> progressBar.barColor = Color.RED
-				newValue > 0.5 -> progressBar.barColor = Color.YELLOW
-				else -> progressBar.barColor = Color.GREEN
-			}
-		}
+        progressBar.progressProperty.addListener { _, newValue ->
+            when {
+                newValue > 0.8 -> progressBar.barColor = Color.RED
+                newValue > 0.5 -> progressBar.barColor = Color.YELLOW
+                else -> progressBar.barColor = Color.GREEN
+            }
+        }
 
-		val progressBarLabel = Label(
-			posX = progressBar.posX,
-			posY = progressBar.posY - 50,
-			width = progressBar.width,
-			height = 50,
-			alignment = Alignment.CENTER,
-			text = "This is a ProgressBar. Click it to progress it!"
-		)
+        val progressBarLabel = Label(
+            posX = progressBar.posX,
+            posY = progressBar.posY - 50,
+            width = progressBar.width,
+            height = 50,
+            alignment = Alignment.CENTER,
+            text = "This is a ProgressBar. Click it to progress it!"
+        )
 
-		menuScene.addComponents(progressBar, progressBarLabel)
+        menuScene.addComponents(progressBar, progressBarLabel)
 
-		//RadioButton and ToggleButton
-		val toggleGroup = ToggleGroup()
+        //RadioButton and ToggleButton
+        val toggleGroup = ToggleGroup()
 
-		val radioButton = RadioButton(posX = 50, posY = 450, toggleGroup = toggleGroup)
+        val radioButton = RadioButton(posX = 50, posY = 450, toggleGroup = toggleGroup)
 
-		val radioLabel = Label(
-			posX = radioButton.posX + radioButton.width,
-			posY = radioButton.posY,
-			width = 300 - radioButton.width,
-			height = radioButton.height,
-			text = "This is a RadioButton.",
-			alignment = Alignment.CENTER_LEFT
-		).apply { isWrapText = true }
+        val radioLabel = Label(
+            posX = radioButton.posX + radioButton.width,
+            posY = radioButton.posY,
+            width = 300 - radioButton.width,
+            height = radioButton.height,
+            text = "This is a RadioButton.",
+            alignment = Alignment.CENTER_LEFT
+        ).apply { isWrapText = true }
 
-		radioButton.selectedProperty.addListener { _, newValue ->
-			radioLabel.text = if (newValue) "This is a selected radio button!" else "This is a deselected radio button!"
-		}
+        radioButton.selectedProperty.addListener { _, newValue ->
+            radioLabel.text = if (newValue) "This is a selected radio button!" else "This is a deselected radio button!"
+        }
 
-		menuScene.addComponents(radioButton, radioLabel)
+        menuScene.addComponents(radioButton, radioLabel)
 
-		val toggleButton = ToggleButton(posX = 450, posY = 450, toggleGroup = toggleGroup)
+        val toggleButton = ToggleButton(posX = 450, posY = 450, toggleGroup = toggleGroup)
 
-		val toggleLabel = Label(
-			posX = toggleButton.posX + toggleButton.width,
-			posY = toggleButton.posY,
-			width = 300 - toggleButton.width,
-			height = toggleButton.height,
-			text = "This is a ToggleButton.",
-			alignment = Alignment.CENTER_LEFT
-		).apply { isWrapText = true }
+        val toggleLabel = Label(
+            posX = toggleButton.posX + toggleButton.width,
+            posY = toggleButton.posY,
+            width = 300 - toggleButton.width,
+            height = toggleButton.height,
+            text = "This is a ToggleButton.",
+            alignment = Alignment.CENTER_LEFT
+        ).apply { isWrapText = true }
 
-		toggleButton.selectedProperty.addListener { _, newValue ->
-			toggleLabel.text =
-				if (newValue) "This is a selected toggle button!" else "This is a deselected toggle button!"
-		}
+        toggleButton.selectedProperty.addListener { _, newValue ->
+            toggleLabel.text =
+                if (newValue) "This is a selected toggle button!" else "This is a deselected toggle button!"
+        }
 
-		menuScene.addComponents(toggleButton, toggleLabel)
+        menuScene.addComponents(toggleButton, toggleLabel)
 
-		//TextArea
-		val textArea = TextArea(posX = 50, posY = 600, prompt = "Type something! This is the prompt.")
-		textArea.textProperty.addListener { _, newValue ->
-			outputLabel.text = newValue
-		}
+        //TextArea
+        val textArea = TextArea(posX = 50, posY = 600, prompt = "Type something! This is the prompt.")
+        textArea.textProperty.addListener { _, newValue ->
+            outputLabel.text = newValue
+        }
 
-		val textAreaLabel = Label(
-			posX = textArea.posX,
-			posY = textArea.posY - 50,
-			width = textArea.width,
-			height = 50,
-			alignment = Alignment.CENTER,
-			text = "This is a TextArea."
-		)
+        val textAreaLabel = Label(
+            posX = textArea.posX,
+            posY = textArea.posY - 50,
+            width = textArea.width,
+            height = 50,
+            alignment = Alignment.CENTER,
+            text = "This is a TextArea."
+        )
 
-		menuScene.addComponents(textArea, textAreaLabel)
+        menuScene.addComponents(textArea, textAreaLabel)
 
-		//TextField
-		val textField = TextField(posX = 450, posY = 600, width = 300, prompt = "Type something! This is the prompt.")
-		textField.textProperty.addListener { _, newValue ->
-			outputLabel.text = newValue
-		}
+        //TextField
+        val textField = TextField(posX = 450, posY = 600, width = 300, prompt = "Type something! This is the prompt.")
+        textField.textProperty.addListener { _, newValue ->
+            outputLabel.text = newValue
+        }
 
-		val textFieldLabel = Label(
-			posX = textField.posX,
-			posY = textField.posY - 50,
-			width = textField.width,
-			height = 50,
-			alignment = Alignment.CENTER,
-			text = "This is a TextField."
-		)
+        val textFieldLabel = Label(
+            posX = textField.posX,
+            posY = textField.posY - 50,
+            width = textField.width,
+            height = 50,
+            alignment = Alignment.CENTER,
+            text = "This is a TextField."
+        )
 
-		menuScene.addComponents(textField, textFieldLabel)
+        menuScene.addComponents(textField, textFieldLabel)
 
-		//ListView
-		val listView = ListView<Int>(posX = 50, posY = 800, width = 300, height = 200)
-		listView.formatFunction = {
-			"Value for this cell is $it"
-		}
+        //ListView
+        val listView = ListView<Int>(posX = 50, posY = 800, width = 300, height = 200)
+        listView.formatFunction = {
+            "Value for this cell is $it"
+        }
 
-		listView.items = mutableListOf(42, 1337, 1, 2, 3)
-		val listViewLabel = Label(
-			posX = listView.posX,
-			posY = listView.posY - 50,
-			width = listView.width,
-			height = 50,
-			text = "This is a ListView.",
-			alignment = Alignment.CENTER
-		)
+        listView.items = mutableListOf(42, 1337, 1, 2, 3)
+        val listViewLabel = Label(
+            posX = listView.posX,
+            posY = listView.posY - 50,
+            width = listView.width,
+            height = 50,
+            text = "This is a ListView.",
+            alignment = Alignment.CENTER
+        )
 
-		menuScene.addComponents(listView, listViewLabel)
+        menuScene.addComponents(listView, listViewLabel)
 
-		//TableView
-		val table = TableView<Int>(posX = 450, posY = 800, width = 300, height = 200)
+        //TableView
+        val table = TableView<Int>(posX = 450, posY = 800, width = 300, height = 200)
 
-		table.columns.add(TableColumn(title = "Value", width = 100) { "$it" })
+        table.columns.add(TableColumn(title = "Value", width = 100) { "$it" })
 
-		table.columns.add(TableColumn(title = "Squared", width = 100) { "${it * it}" })
+        table.columns.add(TableColumn(title = "Squared", width = 100) { "${it * it}" })
 
-		table.columns.add(TableColumn(title = "Even?", width = 100) { "${it % 2 == 0}" })
+        table.columns.add(TableColumn(title = "Even?", width = 100) { "${it % 2 == 0}" })
 
-		table.items.addAll(mutableListOf(42, 1337, 1, 2, 3))
+        table.items.addAll(mutableListOf(42, 1337, 1, 2, 3))
 
-		val tableLabel = Label(
-			posX = table.posX,
-			posY = table.posY - 50,
-			width = table.width,
-			height = 50,
-			text = "This is a TableView.",
-			alignment = Alignment.CENTER
-		)
+        val tableLabel = Label(
+            posX = table.posX,
+            posY = table.posY - 50,
+            width = table.width,
+            height = 50,
+            text = "This is a TableView.",
+            alignment = Alignment.CENTER
+        )
 
-		menuScene.addComponents(table, tableLabel)
+        menuScene.addComponents(table, tableLabel)
 
-		showMenuScene(menuScene)
-		show()
-	}
+        showMenuScene(menuScene)
+        show()
+    }
 }
 ````
