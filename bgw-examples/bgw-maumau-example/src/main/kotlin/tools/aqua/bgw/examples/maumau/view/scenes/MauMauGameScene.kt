@@ -211,7 +211,7 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual(BG_FILE)) {
     buttonHearts.isVisible = false
     buttonDiamonds.isVisible = false
 
-    /*addComponents(
+    addComponents(
         drawStack,
         gameStack,
         currentPlayerHand,
@@ -228,7 +228,7 @@ class MauMauGameScene : BoardGameScene(background = ImageVisual(BG_FILE)) {
         hintButton,
         mainMenuButton)
 
-    lockedProperty.addListener { _, nV -> waitForOpponentLabel.isVisible = nV }*/
+    lockedProperty.addListener { _, nV -> waitForOpponentLabel.isVisible = nV }
   }
 
   /** Starts the dot animation. */

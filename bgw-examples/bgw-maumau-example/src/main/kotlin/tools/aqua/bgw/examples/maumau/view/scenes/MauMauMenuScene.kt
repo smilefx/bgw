@@ -58,7 +58,7 @@ class MauMauMenuScene :
   val exitButton: Button = MenuButton("Exit")
 
   init {
-    /*addComponents(
+    addComponents(
         GridPane<LabeledUIComponent>(columns = 1, rows = 6, spacing = 15, layoutFromCenter = false)
             .apply {
               this[0, 0] = menuLabel
@@ -70,6 +70,6 @@ class MauMauMenuScene :
 
               setColumnWidth(0, 300)
               setCenterMode(Alignment.CENTER)
-            })*/
+            })
   }
 }

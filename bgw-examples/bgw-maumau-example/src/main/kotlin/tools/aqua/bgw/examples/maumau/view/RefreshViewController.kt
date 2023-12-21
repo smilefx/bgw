@@ -488,10 +488,12 @@ class RefreshViewController(private val viewController: MauMauViewController) : 
   /** Removes sneak peek interactivity to card. */
   private fun CardView.addSneakInteraction() {
     onMouseEntered = {
-      viewController.mauMauGameScene.playAnimation(FlipAnimation(this, backVisual, frontVisual))
+        this.showFront()
+      //viewController.mauMauGameScene.playAnimation(FlipAnimation(this, backVisual, frontVisual))
     }
     onMouseExited = {
-      viewController.mauMauGameScene.playAnimation(FlipAnimation(this, frontVisual, backVisual))
+        this.showBack()
+      //viewController.mauMauGameScene.playAnimation(FlipAnimation(this, frontVisual, backVisual))
     }
   }
 
