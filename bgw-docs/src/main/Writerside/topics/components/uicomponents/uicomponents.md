@@ -41,95 +41,25 @@
 [UserInputDoc]: ../../concepts/user-input/UserInput.md
 
 # UIComponents
-
-<tldr>
-    <p><format style="bold">Components for displaying user interface elements</format></p>
-    <p>→ &nbsp; <a href="http://">StaticComponentView</a></p>
-</tldr>
-
-UIComponents are components that are used to display information to the user or retrieve input from the user. They can be used in any scene and are **not limited** to [BoardGameScenes][BoardGameSceneKDoc].
-
-<chapter title="UIComponents" collapsible="true" default-state="expanded">
-    <table style="header-column">
-    <tr>
-        <td width="20%">Button</td>
-        <td>Component for displaying a styled interactive button</td>
-    </tr>
-    <tr>
-        <td>Label</td>
-        <td>Component for displaying a styled text label</td>
-    </tr>
-    <tr>
-        <td>CheckBox</td>
-        <td>Component for displaying a styled checkbox</td>
-    </tr>
-    <tr>
-        <td>BinaryStateButton</td>
-        <td>Component for displaying a styled toggle button</td>
-    </tr>
-    <tr>
-        <td>TextField</td>
-        <td>Component for displaying a styled text input field</td>
-    </tr>
-    <tr>
-        <td>PasswordField</td>
-        <td>Component for displaying a styled password input field</td>
-    </tr>
-    <tr>
-        <td>TextArea</td>
-        <td>Component for displaying a styled text input area</td>
-    </tr>
-    <tr>
-        <td>ComboBox</td>
-        <td>Component for displaying a styled dropdown selector</td>
-    </tr>
-    <tr>
-        <td>TableView</td>
-        <td>Component for displaying a styled table of components</td>
-    </tr>
-    <tr>
-        <td>ListView</td>
-        <td>Component for displaying a styled list of components</td>
-    </tr>
-    <tr>
-        <td>ProgressBar</td>
-        <td>Component for displaying a styled progress bar</td>
-    </tr>
-    <tr>
-        <td>ColorPicker</td>
-        <td>Component for displaying a styled color picker</td>
-    </tr>
-    </table>
-</chapter>
+[UIComponents][UIComponentKDoc] serve as a medium to display information to the user or to gather user input. They can be used in any scene and are **not limited** to [BoardGameScenes][BoardGameSceneKDoc].
 
 <!-- TODO: Add code/result snippets for each component -->
 
-## Prior knowledge
+## Inheritance 
 
-All UI components are derived from the [ComponentView][ComponentViewDoc] superclass. Make sure to read the documentation
-for [ComponentViews][] first, as the features of this superclass are not reiterated here.
+All UI components inherit from the [ComponentView][ComponentViewDoc] superclass. This means that they can utilize all methods for handling user input, as detailed in the [User Input Guide][UserInputDoc]. There are three primary classes of UIComponentViews:
 
-## Introduction
-
-[UIComponent][UIComponentKDoc] serves as a medium to display information to the user or to gather user input. There are
-three fundamental classes of UIComponentViews:
-
-- [UIComponent][UIComponentKDoc]: This is the base class for all UIComponents.
-- [LabeledUIComponents][LabeledUIComponentKDoc]: This class extends UIComponent and offers additional fields to specify
-  a text, for instance, a Button with a text.
-- [TextInputUIComponents][TextInputUIComponentKDoc]: This class extends UIComponent and provides a text input field for
-  user-defined text.
-
-> Note: UIComponents are a type of ComponentView. This implies that all methods for handling user input, as discussed in
-> the [User Input Guide][UserInputDoc], are also applicable to UIComponentViews.
-
-The following is a visual representation of all available UIComponents within the framework. Portions of the source code
-will be utilized in this tutorial to highlight the key features of each UIComponent. The complete source code can be
-accessed here:
-
-[View it on GitHub](https://)
-
-![image](visualguide.png)
+<deflist style="full" sorted="desc">
+    <def title="UIComponent">
+        This is the base class for all UIComponents.
+    </def>
+    <def title="LabeledUIComponent">
+        This class extends UIComponent and offers additional fields to specify a text, for instance, a Button with a text.
+    </def>
+    <def title="TextInputUIComponent">
+          This class extends UIComponent and provides a text input field for user-defined text.
+    </def>
+</deflist>
 
 ## Label
 
@@ -143,7 +73,7 @@ A [Label][LabelKDoc] is a basic text element. In this instance, a new label is c
 
 <tabs>
     <tab title="Component">
-        <img src="card_deck.png" />
+        <img src="../../../images/components/uicomponents/label.svg" width="706" />
     </tab>
     <tab title="Code">
         <code-block lang="kotlin">
@@ -172,7 +102,7 @@ A [Button][ButtonKDoc] is a component that has an animation upon mouse click. It
 
 <tabs>
     <tab title="Component">
-        <img src="card_deck.png" />
+        <img src="../../../images/components/uicomponents/button.svg" width="706" />
     </tab>
     <tab title="Code">
         <code-block lang="kotlin">
@@ -224,32 +154,32 @@ listeners print the current state of the CheckBox to the console.
 
 <tabs>
     <tab title="Component">
-        <img src="card_deck.png" />
+        <img src="../../../images/components/uicomponents/checkbox.svg" width="706" />
     </tab>
     <tab title="Code">
         <code-block lang="kotlin">
-        val checkBox = CheckBox(
-            posX = 50,
-            posY = 150,
-            width = 300,
-            text = "I am a CheckBox.",
-            alignment = Alignment.CENTER_LEFT,
-            allowIndeterminate = true
-        )
-        &#13;
-        // Add a listener to fire when the CheckBox gets checked or unchecked
-        checkBox.isCheckedProperty.addListener { _, newValue ->
-            if (newValue)
-                println("The check box is checked!")
-            else
-                println("The check box is unchecked!")
-        }
-        &#13;
-        // Add a listener to fire when the CheckBox gets ambiguous
-        checkBox.isIndeterminateProperty.addListener { _, newValue ->
-            if (newValue)
-                println("The check box is indeterminate!")
-        }
+            val checkBox = CheckBox(
+                posX = 50,
+                posY = 150,
+                width = 300,
+                text = "I am a CheckBox.",
+                alignment = Alignment.CENTER_LEFT,
+                allowIndeterminate = true
+            )
+            &#13;
+            // Add a listener to fire when the CheckBox gets checked or unchecked
+            checkBox.isCheckedProperty.addListener { _, newValue ->
+                if (newValue)
+                    println("The check box is checked!")
+                else
+                    println("The check box is unchecked!")
+            }
+            &#13;
+            // Add a listener to fire when the CheckBox gets ambiguous
+            checkBox.isIndeterminateProperty.addListener { _, newValue ->
+                if (newValue)
+                    println("The check box is indeterminate!")
+            }
         </code-block>
     </tab>
 </tabs>
