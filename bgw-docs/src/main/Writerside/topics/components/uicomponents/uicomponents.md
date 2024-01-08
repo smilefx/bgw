@@ -98,7 +98,7 @@ A [Label][LabelKDoc] is a basic text element. In this instance, a new label is c
     <p>→ &nbsp; <a href="http://">LabeledUIComponent</a> &nbsp; | &nbsp; <a href="http://">UIComponent</a></p>
 </tldr>
 
-A [Button][ButtonKDoc] is a component that has an animation upon mouse click. It can also be labeled with descriptive text. In this example, we create a new button and apply an `onMouseClicked` event. When the button is clicked, the text "Someone pressed the Button!" is printed to the console.
+A [Button][ButtonKDoc] is a component that has an animation upon mouse click. It can also be labeled with descriptive text. In this example, we create a new button and apply an `onMouseClicked` event. When the button is clicked, the text `"Someone pressed the Button!"` is printed to the console.
 
 <tabs>
     <tab title="Component">
@@ -113,6 +113,7 @@ A [Button][ButtonKDoc] is a component that has an animation upon mouse click. It
                 visual = ColorVisual.LIGHT_GRAY
             )
             &#13;
+            // Add a listener to fire when the Button gets clicked
             button.onMouseClicked = {
                 println("Someone pressed the Button!")
             }
@@ -186,31 +187,32 @@ listeners print the current state of the CheckBox to the console.
 
 ## ColorPicker
 
-A [ColorPicker][ColorPickerKDoc] may be used to enable a user to specify a colour intuitively. The selected
-colour can be set and retrieved via the ``selectedColor`` property. To react to a new ``selectedColor``, a listener
-may be added
-to the ``selectedColorProperty``. In this example the text colour of another label is changed, whenever a new colour is
-picked.
+A [ColorPicker][ColorPickerKDoc] allows users to easily select a color. The currently selected color can be accessed and modified through the `selectedColor` property. To execute specific actions when the selected color changes, you can add a listener to the `selectedColorProperty`.
 
-````kotlin
-val colorPicker = ColorPicker(posX = 450, posY = 200, width = 300, initialColor = Color.BLACK)
+In this code, the ColorPicker is initialized with an initial color of black. The listener attached to the selectedColorProperty prints the new color value each time it changes.
 
-val colorPickerLabel = Label(
-    posX = colorPicker.posX,
-    posY = colorPicker.posY - 50,
-    width = colorPicker.width,
-    height = 50,
-    alignment = Alignment.CENTER,
-    font = Font(color = colorPicker.selectedColor),
-    text = "This is a ColorPicker. Use it to change the colour of this text!"
-).apply { isWrapText = true }
+<tabs>
+    <tab title="Component">
+        <img src="../../../images/components/uicomponents/colorpicker.svg" width="706" />
+    </tab>
+    <tab title="Code">
+        <code-block lang="kotlin">
+            val colorPicker = ColorPicker(
+                posX = 450,
+                posY = 200,
+                width = 300,
+                initialColor = Color.BLACK
+            )
+            &#13;
+            // Add a listener to fire when the selected color changes
+            colorPicker.selectedColorProperty.addListener { _, newValue ->
+                println("The color is now $newValue!")
+            }
+        </code-block>
+    </tab>
+</tabs>
 
-colorPicker.selectedColorProperty.addListener { _, newValue ->
-    colorPickerLabel.font = Font(color = newValue)
-}
-````
-
-## ComboBox
+## ComboBox 
 
 A [ComboBox][ComboBoxKDoc] is a drop-down menu, where a user may choose an option. A ``prompt`` may be specified to
 inform the user, what is expected of him. The ComboBox has a type parameter to define a type for the objects that
@@ -225,14 +227,21 @@ In this example a ComboBox typed to ``Double`` with the ``prompt`` "Select an op
 instantiated. Then the ``formatFunction`` is set, so the contained doubles get represented as their Int value with the
 suffix "Option ".
 
-````kotlin
-val comboBox =
-    ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
-
-comboBox.formatFunction = {
-    "Option ${it.toInt()}"
-}
-````
+<tabs>
+    <tab title="Component">
+        <img src="../../../images/components/uicomponents/combobox.svg" width="706" />
+    </tab>
+    <tab title="Code">
+        <code-block lang="kotlin">
+            val comboBox =
+                ComboBox<Double>(posX = 50, posY = 350, width = 300, prompt = "Select an option! This is the prompt.")
+            &#13;
+            comboBox.formatFunction = {
+                "Option ${it.toInt()}"
+            }
+        </code-block>
+    </tab>
+</tabs>
 
 To define the options simply set the ``items`` list. In the example three doubles are set.
 
