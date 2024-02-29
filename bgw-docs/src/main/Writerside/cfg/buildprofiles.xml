@@ -5,7 +5,7 @@
     <variables></variables>
     <build-profile instance="in">
         <variables>
-            <primary-color>ruby</primary-color>
+            <primary-color>purple</primary-color>
             <header-logo>logo.svg</header-logo>
             <custom-favicons>favicon.svg</custom-favicons>
             <noindex-content>true</noindex-content>

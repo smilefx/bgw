@@ -32,7 +32,7 @@
 
 In a board game application, scenes serve as the fundamental layout elements. A single instance of [BoardGameApplication][BoardGameApplicationKDoc] can concurrently display one [BoardGameScene][BoardGameSceneKDoc] and one [MenuScene][MenuSceneKDoc].
 
-> Note: If a menu scene is visible, the active board game scene gets blurred out.
+> Note: If a menu scene is visible, the active board game scene gets blurred out. 
 
 ## BoardGameScene
 
