@@ -29,7 +29,7 @@
 
 # Getting Started
 
-The creation of a simple board game application begins with the instantiation of a [BoardGameApplication][BoardGameApplicationKDoc] object. Typically, you would create a singleton that extends [BoardGameApplication][BoardGameApplicationKDoc] to serve as the main controller for your game.
+Creating a simple board game application begins with the instantiation of a [BoardGameApplication][BoardGameApplicationKDoc] object. Typically, you would create a singleton that extends [BoardGameApplication][BoardGameApplicationKDoc] to serve as the main controller for your game.
 
 ```kotlin
 object MauMauApplication : BoardGameApplication(

@@ -2,14 +2,32 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <variables></variables>
+    <variables>
+        <web-root>https://tudo-aqua.github.io/bgw/</web-root>
+        <download-page>https://github.com/tudo-aqua/bgw</download-page>
+        <product-web-url>https://tudo-aqua.github.io/bgw/</product-web-url>
+        <download-title>BGW on GitHub</download-title>
+        <showDownloadButton>true</showDownloadButton>
+        <primary-color>purple</primary-color>
+        <header-logo>logo.svg</header-logo>
+        <custom-favicons>favicon.svg</custom-favicons>
+        <noindex-content>true</noindex-content>
+
+        <color-preset>contrast</color-preset>
+    </variables>
+
+    <shortcuts>
+        <src>keymap.xml</src>
+        <layout name="Windows" display-name="Windows"/>
+        <layout name="macOS" display-name="macOS"/>
+        <layout name="GNOME" display-name="Linux"/>
+    </shortcuts>
+
+    <footer>
+        <copyright>2024. The BoardGameWork Authors</copyright>
+    </footer>
+
     <build-profile instance="in">
-        <variables>
-            <primary-color>purple</primary-color>
-            <header-logo>logo.svg</header-logo>
-            <custom-favicons>favicon.svg</custom-favicons>
-            <noindex-content>true</noindex-content>
-        </variables>
     </build-profile>
 
 </buildprofiles>

@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="in"
-                  name="BoardGameWork" start-page="Section-Starting-Page.topic">
+                  name="BoardGameWork" start-page="Installation.md">
 
     <toc-element topic="Section-Starting-Page.topic">
         <toc-element topic="Installation.md" toc-title="Installation">

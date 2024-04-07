@@ -48,7 +48,7 @@ Start by adding the latest version of BGW as a dependency to your project.
 
 <tabs group="gradleMaven">
     <tab title="Gradle" group-key="gradle">
-        <code-block lang="gradle">
+        <code-block lang="apache"> 
         implementation("tools.aqua:bgw-gui:0.9")
         </code-block>
     </tab>
@@ -69,7 +69,7 @@ You also need to specify the correct JVM target in your build system.
 
 <tabs group="gradleMaven">
     <tab title="Gradle" group-key="gradle">
-        <code-block lang="gradle">
+        <code-block lang="apache">
             compileKotlin {
                 kotlinOptions.jvmTarget = "11"
             }
