@@ -348,6 +348,22 @@ internal val App = FC<AppProps> { props ->
             ".bgw-root *:has(*[aria-roledescription='draggable'][aria-pressed='true'])" {
                 zIndex = important(integer(1000000))
             }
+
+            ".react-transform-wrapper" {
+                width = 100.pct
+                height = 100.pct
+                position = Position.relative
+                overflow = Overflow.hidden
+            }
+
+            ".react-transform-component" {
+                width = 100.pct
+                height = 100.pct
+                position = Position.absolute
+                left = 0.px
+                top = 0.px
+                overflow = Overflow.hidden
+            }
         }
     }
 

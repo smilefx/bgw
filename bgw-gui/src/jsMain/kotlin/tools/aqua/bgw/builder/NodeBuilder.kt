@@ -40,7 +40,7 @@ import tools.aqua.bgw.elements.uicomponents.TextArea as ReactTextArea
 import tools.aqua.bgw.elements.uicomponents.PasswordField as ReactPasswordField
 import tools.aqua.bgw.elements.gamecomponentviews.HexagonView as ReactHexagonView
 import tools.aqua.bgw.elements.container.HexagonGrid as ReactHexagonGrid
-import tools.aqua.bgw.elements.layoutviews.CameraPane as ReactCameraPane
+import tools.aqua.bgw.elements.layoutviews.CameraPaneNew as ReactCameraPane
 import tools.aqua.bgw.elements.gamecomponentviews.TokenView as ReactTokenView
 import tools.aqua.bgw.elements.gamecomponentviews.DiceView as ReactDiceView
 import tools.aqua.bgw.elements.uicomponents.ComboBox as ReactComboBox
